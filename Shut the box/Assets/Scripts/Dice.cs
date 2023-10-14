@@ -19,16 +19,22 @@ public class Dice : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    public void RollDice()
+    public IEnumerator RollDice()
     {
+        Debug.Log("Roll");
         StopAllCoroutines();
         _isRolling = true;
-
+        
         transform.position = new Vector3(0, _startHeight, 0);
         transform.rotation = Quaternion.identity;
         _rb.AddForce(transform.up * 10, ForceMode.Impulse);
         _rb.AddTorque(GetRandFl(_torque), GetRandFl(_torque), GetRandFl(_torque), ForceMode.Impulse);
-        StartCoroutine(WaitForDiceToStop());
+
+        yield return StartCoroutine(WaitForDiceToStop());
+
+        int sideValue = GetSideValue();
+
+        OnRollFinished?.Invoke(sideValue);
     }
 
     private float GetRandFl(float max)
@@ -44,9 +50,6 @@ public class Dice : MonoBehaviour
         }
         yield return null;
         _isRolling = false;
-        int sideValue = GetSideValue();
-        Debug.Log(sideValue);
-        OnRollFinished?.Invoke(sideValue);
     }
 
     private int GetSideValue()

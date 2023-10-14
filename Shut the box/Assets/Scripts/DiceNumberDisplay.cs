@@ -4,15 +4,14 @@ using UnityEngine;
 public class DiceNumberDisplay : MonoBehaviour
 {
     TextMeshProUGUI text;
-    public static int diceNumber;
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateText()
+    public void UpdateText(int diceResult)
     {
-        text.text = diceNumber.ToString();
+        text.text = diceResult.ToString();
     }
 }
