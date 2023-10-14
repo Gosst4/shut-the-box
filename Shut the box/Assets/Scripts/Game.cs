@@ -9,7 +9,6 @@ public class Game : MonoBehaviour
     [SerializeField] DiceNumberDisplay numberDisplay;
 
     List<Dice> diceList = new List<Dice>();
-
     int _result;
 
     private void Start()

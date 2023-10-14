@@ -21,7 +21,6 @@ public class Dice : MonoBehaviour
 
     public IEnumerator RollDice()
     {
-        Debug.Log("Roll");
         StopAllCoroutines();
         _isRolling = true;
         
