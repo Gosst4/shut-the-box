@@ -10,22 +10,16 @@ public class Dice : MonoBehaviour
     [SerializeField] float _startHeight = 2f;
 
     Rigidbody _rb;
-    bool _isRolling = false;
+    public static bool _isRolling = false;
 
     public event Action<int> OnRollFinished;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RollDice();
-        }
-    }
 
-    private void RollDice()
+    public void RollDice()
     {
         StopAllCoroutines();
         _isRolling = true;

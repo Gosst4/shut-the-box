@@ -11,7 +11,7 @@ public class DiceNumberDisplay : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
     }
 
-    void Update()
+    public void UpdateText()
     {
         text.text = diceNumber.ToString();
     }
