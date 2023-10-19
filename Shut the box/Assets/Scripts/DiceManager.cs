@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class DiceManager : MonoBehaviour
 {   
-    [SerializeField] Chip[] chips;
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
 
@@ -26,6 +25,7 @@ public class Game : MonoBehaviour
         for (int i = 0; i < v; i++)
         {
             Dice dice = Instantiate(dicePrefab, new Vector3(i + 1, i, i + 1), Quaternion.identity);
+            dice.transform.parent = transform;
             dicePool.Add(dice);
             dice.OnRollFinished += Dice_OnRollFinished;
             dice.gameObject.SetActive(false);
@@ -84,7 +84,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    Dice RequestDiceFromPool()
+    private Dice RequestDiceFromPool()
     {
         foreach (var dice in dicePool)
         {
@@ -96,6 +96,7 @@ public class Game : MonoBehaviour
         }
 
         Dice newDice = Instantiate(dicePrefab, new Vector3(1, 1, 1), Quaternion.identity);
+        newDice.transform.parent = transform;
         newDice.gameObject.SetActive(true);
         newDice.OnRollFinished += Dice_OnRollFinished;
         dicePool.Add(newDice);
@@ -103,7 +104,7 @@ public class Game : MonoBehaviour
         return newDice;
     }
 
-    IEnumerator RollAllDice()
+    private IEnumerator RollAllDice()
     {
         _result = 0;
         numberDisplay.UpdateText(_result);

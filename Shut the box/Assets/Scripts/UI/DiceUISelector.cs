@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class DiceUISelector : MonoBehaviour
 {
-    Game game;
+    DiceManager game;
     private void Awake()
     {
-        game = FindObjectOfType<Game>();
+        game = FindObjectOfType<DiceManager>();
     }
     public void SelectNumberOfDices(int number)
     {
