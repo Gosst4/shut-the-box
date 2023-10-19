@@ -6,7 +6,7 @@ public class Chip : MonoBehaviour
 {
     [SerializeField] Number _number;
 
-    bool _isActive;
+    public bool _isActive;
 
     public void OnMouseDown()
     {
