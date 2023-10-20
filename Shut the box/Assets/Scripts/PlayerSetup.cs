@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerSetup : MonoBehaviour
 {
@@ -18,4 +15,32 @@ public class PlayerSetup : MonoBehaviour
         return score;
     }
 
+    public bool CanMakeMove(int diceResult)
+    {
+        if (!HasAnyChips()) return false;
+        foreach (Chip chip in chips)
+        {
+            if (chip.IsActive && chip.GetValue() == diceResult) 
+                return true;
+        }
+        return false;
+    }
+
+    public void SetClickability(bool isClickable)
+    {
+        foreach(Chip chip in chips)
+        {
+            chip.SetClickability(isClickable);
+        }
+    }
+
+    private bool HasAnyChips()
+    {
+        foreach (Chip chip in chips)
+        {
+            if (chip.IsActive) return true;
+        }
+        Debug.Log("There is a winner!");
+        return false;
+    }
 }
