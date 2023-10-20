@@ -6,11 +6,16 @@ public class Chip : MonoBehaviour
 {
     [SerializeField] Number _number;
 
-    public bool _isActive;
+    public bool IsActive {  get; private set; } = true;
 
     public void OnMouseDown()
     {
-        _isActive = false;
+        IsActive = false;
         GetComponent<Rigidbody>().useGravity = true;
+    }
+
+    public int GetValue()
+    {
+        return (int)_number;
     }
 }

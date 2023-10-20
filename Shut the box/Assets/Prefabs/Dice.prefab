@@ -65,9 +65,9 @@ MonoBehaviour:
   _mask:
     serializedVersion: 2
     m_Bits: 64
-  _rollForce: 10
-  _torque: 10
-  _startHeight: 3
+  _rollForce: 20
+  _torque: 20
+  _startHeight: 5
 --- !u!1001 &8911606915252651434
 PrefabInstance:
   m_ObjectHideFlags: 0
