@@ -19,16 +19,15 @@ public class Player : MonoBehaviour
         Id = id;
     }
 
-    public void UnblockMovement()
+    public void UnblockMovement(int diceResult)
     {
-        if (Setup.CanMakeMove(2))
+        if (Setup.CanMakeMove(diceResult))
         {
-            Setup.ShowPossibleMoves(2);
+            Setup.ShowPossibleMoves(diceResult);
         }
-    }
-
-    public IEnumerator MakeMove()
-    {
-        throw new NotImplementedException();
+        else
+        {
+            Score += Setup.CalculateRound();
+        }
     }
 }

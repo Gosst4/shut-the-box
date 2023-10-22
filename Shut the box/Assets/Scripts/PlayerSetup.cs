@@ -6,16 +6,14 @@ public class PlayerSetup : MonoBehaviour
 
     public void ShowPossibleMoves(int diceValue)
     {
-        if (CanMakeMove(diceValue))
+        foreach (Chip chip in chips)
         {
-            foreach (Chip chip in chips)
+            if (!chip.IsActive) continue;
+            if (chip.GetValue() == diceValue)
             {
-                if (chip.IsActive && chip.GetValue() == diceValue)
-                {
-                    chip.SetPossibleMove();
-                }
+                chip.SetPossibleMove();
             }
-        }
+        }       
     }
     public int CalculateRound()
     {

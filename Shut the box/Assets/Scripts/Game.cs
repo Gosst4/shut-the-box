@@ -15,6 +15,7 @@ public class Game : MonoBehaviour
     {
         CreatePlayer(_id, "Player 1", playerSetups[0]);
         CreatePlayer(_id, "Player 2", playerSetups[1]);
+        DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
     }
 
     private Player CreatePlayer(int id, string name, PlayerSetup setup)
@@ -25,10 +26,7 @@ public class Game : MonoBehaviour
         return player;
     }
 
-    public void MakeMove(Player player)
-    {
-        player.MakeMove();
-    }
+
 
     public void NextPlayer()
     {
@@ -37,11 +35,13 @@ public class Game : MonoBehaviour
         {
             BoardRotator.Instance.RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
         }
-        players[currentId].UnblockMovement();
-
-
 
         Debug.Log(currentId);
-        //currentPlayer.UnblockMovement();
     }
+
+    private void DiceManager_OnAllRollsFinished(int _result)
+    {
+        players[currentId].UnblockMovement(_result);
+    }
+
 }

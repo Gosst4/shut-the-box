@@ -11,7 +11,9 @@ public class DiceManager : MonoBehaviour
     int startingNumberOfDice = 2;
     List<Dice> dicePool = new List<Dice>();
     List<Dice> currentDices = new List<Dice>();
-    int _result;
+    int _allDiceResult;
+
+    public event Action<int> OnAllRollsFinished;
 
     static DiceManager instance;
     public static DiceManager Instance
@@ -118,8 +120,8 @@ public class DiceManager : MonoBehaviour
 
     private IEnumerator RollAllDice()
     {
-        _result = 0;
-        numberDisplay.UpdateText(_result);
+        _allDiceResult = 0;
+        numberDisplay.UpdateText(_allDiceResult);
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
         for(int i = 0; i < currentDices.Count; i++)
         {
@@ -130,11 +132,12 @@ public class DiceManager : MonoBehaviour
         {
             yield return c;
         }
-        numberDisplay.UpdateText(_result);
+        numberDisplay.UpdateText(_allDiceResult);
+        OnAllRollsFinished?.Invoke(_allDiceResult);
     }
 
     private void Dice_OnRollFinished(int sideValue)
     {
-        _result += sideValue;
+        _allDiceResult += sideValue;
     }
 }
