@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,12 @@ public class Player : MonoBehaviour
     {
         if (Setup.CanMakeMove(2))
         {
-            Setup.SetClickability(true);
+            Setup.ShowPossibleMoves(2);
         }
+    }
+
+    public IEnumerator MakeMove()
+    {
+        throw new NotImplementedException();
     }
 }

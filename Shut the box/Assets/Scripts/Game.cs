@@ -25,10 +25,21 @@ public class Game : MonoBehaviour
         return player;
     }
 
+    public void MakeMove(Player player)
+    {
+        player.MakeMove();
+    }
+
     public void NextPlayer()
     {
         currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
-        FindAnyObjectByType<BoardRotator>().RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
+        if (!BoardRotator.Instance.IsRotating)
+        {
+            BoardRotator.Instance.RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
+        }
+        players[currentId].UnblockMovement();
+
+
 
         Debug.Log(currentId);
         //currentPlayer.UnblockMovement();

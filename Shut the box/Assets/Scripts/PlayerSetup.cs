@@ -4,6 +4,19 @@ public class PlayerSetup : MonoBehaviour
 {
     [SerializeField] Chip[] chips;
 
+    public void ShowPossibleMoves(int diceValue)
+    {
+        if (CanMakeMove(diceValue))
+        {
+            foreach (Chip chip in chips)
+            {
+                if (chip.IsActive && chip.GetValue() == diceValue)
+                {
+                    chip.SetPossibleMove();
+                }
+            }
+        }
+    }
     public int CalculateRound()
     {
         int score = 0;
@@ -26,13 +39,13 @@ public class PlayerSetup : MonoBehaviour
         return false;
     }
 
-    public void SetClickability(bool isClickable)
+/*    public void SetClickability(bool isClickable)
     {
         foreach(Chip chip in chips)
         {
             chip.SetClickability(isClickable);
         }
-    }
+    }*/
 
     private bool HasAnyChips()
     {

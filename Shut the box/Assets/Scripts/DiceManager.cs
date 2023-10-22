@@ -13,6 +13,19 @@ public class DiceManager : MonoBehaviour
     List<Dice> currentDices = new List<Dice>();
     int _result;
 
+    static DiceManager instance;
+    public static DiceManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<DiceManager>();
+            }
+            return instance;
+        }
+    }
+
     private void Start()
     {
         PregenerateDicePool(startingNumberOfDice);
@@ -32,9 +45,9 @@ public class DiceManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void RollTheDice()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Dice._isRolling)
+        if (!Dice._isRolling)
         {
             StartCoroutine(RollAllDice());
         }
@@ -71,7 +84,6 @@ public class DiceManager : MonoBehaviour
                 currentDices.Add(dice);
             }
         }
-
     }
 
     private void InstantiateDices(int numberOfDice)

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chip : MonoBehaviour
 {
     [SerializeField] Number _number;
+    [SerializeField] GameObject _possibleMove;
 
     BoxCollider _boxCollider;
     public bool IsActive {  get; private set; } = true;
@@ -28,5 +29,11 @@ public class Chip : MonoBehaviour
     public void SetClickability(bool isClicable)
     {
         _boxCollider.enabled = isClicable;
+    }
+
+    public void SetPossibleMove()
+    {
+        _possibleMove.SetActive(true);
+        SetClickability(true);
     }
 }
