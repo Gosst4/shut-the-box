@@ -1,21 +1,47 @@
 using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerSetup : MonoBehaviour
 {
     [SerializeField] Chip[] chips;
     [SerializeField] ScoreDisplay scoreDisplay;
 
-    public void ShowPossibleMoves(int diceValue)
+    private void Start()
     {
         foreach (Chip chip in chips)
         {
-            if (!chip.IsActive) continue;
-            if (chip.GetValue() == diceValue)
+            chip.OnChipClicked += Chip_OnChipClicked;
+        }
+    }
+
+    private void Chip_OnChipClicked()
+    {
+        if (DiceManager.Instance.AllDiceResult == CalculateSelectedChips())
+        {
+            foreach (Chip chip in chips)
             {
-                chip.SetPossibleMove();
+                if (chip.IsSelected)
+                    chip.Fall();
+                else
+                {
+                    chip.SetPossibleMove(false);
+                    chip.RemoveSelection();
+                }
             }
-        }       
+        }
+    }
+
+    public void ShowPossibleMoves(int diceValue)
+    {
+        for (int i = 0; i < chips.Length; i++)
+        {
+            if (!chips[i].IsActive) continue;
+            if (chips[i].GetValue() <= diceValue)
+            {
+                chips[i].SetPossibleMove(true);
+            }
+        }    
     }
     public int CalculateRound()
     {
@@ -60,5 +86,16 @@ public class PlayerSetup : MonoBehaviour
     internal void UpdateScoreInUi(int score)
     {
         scoreDisplay.UpdateText(score);
+    }
+
+    private int CalculateSelectedChips()
+    {
+        int total = 0;
+        foreach (Chip chip in chips)
+        {
+            if (chip.IsSelected)
+                total += chip.GetValue();
+        }
+        return total;
     }
 }

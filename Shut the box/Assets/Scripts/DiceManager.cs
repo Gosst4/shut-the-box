@@ -8,11 +8,12 @@ public class DiceManager : MonoBehaviour
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
 
+    public int AllDiceResult {  get; private set; }
+
     int startingNumberOfDice = 2;
     List<Dice> dicePool = new List<Dice>();
     List<Dice> currentDices = new List<Dice>();
-    int _allDiceResult;
-
+   
     public event Action<int> OnAllRollsFinished;
 
     static DiceManager instance;
@@ -120,8 +121,8 @@ public class DiceManager : MonoBehaviour
 
     private IEnumerator RollAllDice()
     {
-        _allDiceResult = 0;
-        numberDisplay.UpdateText(_allDiceResult);
+        AllDiceResult = 0;
+        numberDisplay.UpdateText(AllDiceResult);
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
         for(int i = 0; i < currentDices.Count; i++)
         {
@@ -132,12 +133,12 @@ public class DiceManager : MonoBehaviour
         {
             yield return c;
         }
-        numberDisplay.UpdateText(_allDiceResult);
-        OnAllRollsFinished?.Invoke(_allDiceResult);
+        numberDisplay.UpdateText(AllDiceResult);
+        OnAllRollsFinished?.Invoke(AllDiceResult);
     }
 
     private void Dice_OnRollFinished(int sideValue)
     {
-        _allDiceResult += sideValue;
+        AllDiceResult += sideValue;
     }
 }

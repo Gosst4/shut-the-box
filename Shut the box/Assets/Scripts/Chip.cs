@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,23 @@ public class Chip : MonoBehaviour
     [SerializeField] GameObject _possibleMove;
 
     BoxCollider _boxCollider;
+    Vector3 _startingPosition;
+    public bool IsSelected { get; private set; } = false;
     public bool IsActive {  get; private set; } = true;
+
+    public event Action OnChipClicked;
 
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
     }
+    private void Start()
+    {
+        _startingPosition = transform.position;
+    }
     public void OnMouseDown()
     {
-        IsActive = false;
-        GetComponent<Rigidbody>().useGravity = true;
-        // запустить корутину отключения фишки после падения
+        HighlightSelection();
     }
 
     public int GetValue()
@@ -26,14 +33,31 @@ public class Chip : MonoBehaviour
         return (int)_number;
     }
 
-    public void SetClickability(bool isClicable)
+    public void SetPossibleMove(bool isClicable)
     {
+        _possibleMove.SetActive(isClicable);
         _boxCollider.enabled = isClicable;
     }
 
-    public void SetPossibleMove()
+    public void Fall()
     {
-        _possibleMove.SetActive(true);
-        SetClickability(true);
+        IsActive = false;
+        GetComponent<Rigidbody>().useGravity = true;
+        IsSelected = false;
+        // запустить корутину отключения фишки после падения
+    }
+
+    private void HighlightSelection()
+    {
+        if (IsSelected) return;
+        IsSelected = true;
+        transform.position += new Vector3(0, 1f, 0);
+        OnChipClicked();
+    }
+
+    public void RemoveSelection()
+    {
+        IsSelected = false;
+        transform.position = _startingPosition;
     }
 }
