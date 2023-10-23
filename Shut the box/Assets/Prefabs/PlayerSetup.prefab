@@ -49,7 +49,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466589827751617863}
-  - component: {fileID: 466589827751617860}
   m_Layer: 0
   m_Name: ScoreTextSpawner
   m_TagString: Untagged
@@ -73,19 +72,6 @@ Transform:
   m_Father: {fileID: 5848120201288333522}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &466589827751617860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466589827751617862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85918fa6b69502a478986802381e839e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTextPrefab: {fileID: 5625260608916266136, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
 --- !u!1 &5268094426942893501
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +128,7 @@ MonoBehaviour:
   - {fileID: 799064835209604194}
   - {fileID: 799064835609781312}
   - {fileID: 799064834049777432}
+  scoreDisplay: {fileID: 2541558350349649304}
 --- !u!1001 &466589826091110287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1109,3 +1096,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7584686364265660563, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
   m_PrefabInstance: {fileID: 7878376170943109376}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2541558350349649304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5625260608916266136, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
+  m_PrefabInstance: {fileID: 7878376170943109376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62315f1d3b51b5a44b4bf652a1aa7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

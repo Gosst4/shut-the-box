@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         else
         {
             Score += Setup.CalculateRound();
+            Setup.UpdateScoreInUi(Score);
         }
     }
 }

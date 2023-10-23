@@ -5,12 +5,7 @@ using UnityEngine;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    TextMeshProUGUI text;
-
-    void Start()
-    {
-        text = GetComponent<TextMeshProUGUI>();
-    }
+    [SerializeField] TextMeshProUGUI text;
 
     public void UpdateText(int score)
     {

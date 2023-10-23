@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerSetup : MonoBehaviour
 {
     [SerializeField] Chip[] chips;
+    [SerializeField] ScoreDisplay scoreDisplay;
 
     public void ShowPossibleMoves(int diceValue)
     {
@@ -45,7 +47,7 @@ public class PlayerSetup : MonoBehaviour
         }
     }*/
 
-    private bool HasAnyChips()
+    public bool HasAnyChips()
     {
         foreach (Chip chip in chips)
         {
@@ -53,5 +55,10 @@ public class PlayerSetup : MonoBehaviour
         }
         Debug.Log("There is a winner!");
         return false;
+    }
+
+    internal void UpdateScoreInUi(int score)
+    {
+        scoreDisplay.UpdateText(score);
     }
 }

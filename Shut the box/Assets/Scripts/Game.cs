@@ -30,18 +30,44 @@ public class Game : MonoBehaviour
 
     public void NextPlayer()
     {
-        currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
         if (!BoardRotator.Instance.IsRotating)
         {
+            currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
             BoardRotator.Instance.RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
         }
-
-        Debug.Log(currentId);
     }
 
+    private void CheckWinners()
+    {
+        if (IsGameOver())
+        {
+            Debug.Log("Game over!");
+            Debug.Log($"The winner is {players[currentId].Name}!");
+        }
+    }
     private void DiceManager_OnAllRollsFinished(int _result)
     {
+/*        if (!players[currentId].Setup.CanMakeMove(_result))
+        {
+            NextPlayer();
+        }*/
         players[currentId].UnblockMovement(_result);
+        CheckWinners();
     }
 
+    private bool IsGameOver()
+    {
+        foreach (var player in players)
+        {
+            if (player.Score >= 45)
+            {
+                return true;
+            }
+            if (!player.Setup.HasAnyChips())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
