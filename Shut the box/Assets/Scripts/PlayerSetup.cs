@@ -71,6 +71,15 @@ public class PlayerSetup : MonoBehaviour
         return false;
     }
 
+    public void RestoreSetup()
+    {
+        DiceManager.Instance.ShowDiceSelection(true);
+        foreach (Chip chip in chips)
+        {
+            chip.RestoreState();
+        }
+    }
+
     private bool CanMakeASum(Chip chip, int total)
     {
         for (int i = 1; i < chips.Length; i++)

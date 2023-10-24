@@ -9,12 +9,13 @@ public class Game : MonoBehaviour
 
     List<Player> players = new List<Player>();
     int currentId = 0;
+    Player _currentPlayer;
 
     private void Start()
     {
         CreatePlayers(2);
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
-        
+        _currentPlayer = players[0];
     }
 
     private void CreatePlayers(int number)
@@ -29,7 +30,17 @@ public class Game : MonoBehaviour
     {
         if (!BoardRotator.Instance.IsRotating)
         {
-            currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
+            if (currentId == players.Count - 1)
+            {
+                currentId = 0;
+                foreach (Player player in players)
+                {
+                    player.Setup.RestoreSetup();
+                }
+            }
+            else { currentId++;  }
+
+            //currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
             BoardRotator.Instance.RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
         }
     }

@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _number: 1
   _possibleMove: {fileID: 8297008254820120677}
+  _fallDuration: 2
 --- !u!54 &522831162
 Rigidbody:
   m_ObjectHideFlags: 0
