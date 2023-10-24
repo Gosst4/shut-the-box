@@ -7,6 +7,7 @@ public class DiceManager : MonoBehaviour
 {   
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
+    [SerializeField] GameObject _tintOverDiceSelection;
 
     public int AllDiceResult {  get; private set; }
 
@@ -87,6 +88,11 @@ public class DiceManager : MonoBehaviour
                 currentDices.Add(dice);
             }
         }
+    }
+
+    public void ShowDiceSelection(bool isSelected)
+    {
+        _tintOverDiceSelection.SetActive(isSelected);
     }
 
     private void InstantiateDices(int numberOfDice)

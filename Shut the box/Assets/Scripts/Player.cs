@@ -1,19 +1,15 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{    
+{
     public string Name { get; private set; }
     public int Score { get; private set; }
     public PlayerSetup Setup { get; private set; }
 
-    public int Id { get; }
 
-    public Player(int id, string name, PlayerSetup setup)
+    private void Awake()
     {
-        Name = name;
-        Score = 0;
-        Setup = setup;
-        Id = id;
+        Setup = GetComponent<PlayerSetup>();
     }
 
     public void UnblockMovement(int diceResult)

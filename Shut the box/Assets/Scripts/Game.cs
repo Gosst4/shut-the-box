@@ -5,28 +5,25 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] PlayerSetup[] playerSetups;
+    [SerializeField] Player[] allPlayers;
 
     List<Player> players = new List<Player>();
     int currentId = 0;
-    int _id = 0;
 
     private void Start()
     {
-        CreatePlayer(_id, "Player 1", playerSetups[0]);
-        CreatePlayer(_id, "Player 2", playerSetups[1]);
+        CreatePlayers(2);
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
+        
     }
 
-    private Player CreatePlayer(int id, string name, PlayerSetup setup)
+    private void CreatePlayers(int number)
     {
-        Player player = new Player(id, name, setup);
-        _id++;
-        players.Add(player);
-        return player;
+        for (int i = 0; i < number; i++)
+        {
+            players.Add(allPlayers[i]);
+        }
     }
-
-
 
     public void NextPlayer()
     {

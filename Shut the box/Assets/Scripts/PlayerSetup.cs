@@ -1,7 +1,4 @@
-using System;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerSetup : MonoBehaviour
 {
@@ -24,7 +21,11 @@ public class PlayerSetup : MonoBehaviour
             {
                 if (chip.gameObject.activeInHierarchy == false) continue;
                 if (chip.IsSelected)
+                {
                     StartCoroutine(chip.Fall());
+
+                    if (!HasMoreThanSix()) DiceManager.Instance.ShowDiceSelection(false);
+                }
                 else
                 {
                     chip.SetPossibleMove(false);
@@ -72,7 +73,7 @@ public class PlayerSetup : MonoBehaviour
 
     private bool CanMakeASum(Chip chip, int total)
     {
-        for (int i = 1; i < chips.Count(); i++)
+        for (int i = 1; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
 
@@ -107,6 +108,11 @@ public class PlayerSetup : MonoBehaviour
     internal void UpdateScoreInUi(int score)
     {
         scoreDisplay.UpdateText(score);
+    }
+    
+    private bool HasMoreThanSix()
+    {
+        return chips[6].IsActive || chips[7].IsActive || chips[8].IsActive;
     }
 
     private int CalculateSelectedChips()
