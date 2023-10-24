@@ -9,7 +9,6 @@ public class Chip : MonoBehaviour
     [SerializeField] GameObject _possibleMove;
 
     BoxCollider _boxCollider;
-    Vector3 _startingPosition;
     public bool IsSelected { get; private set; } = false;
     public bool IsActive {  get; private set; } = true;
 
@@ -19,13 +18,12 @@ public class Chip : MonoBehaviour
     {
         _boxCollider = GetComponent<BoxCollider>();
     }
-    private void Start()
-    {
-        _startingPosition = transform.position;
-    }
+
     public void OnMouseDown()
     {
-        HighlightSelection();
+        if (!IsSelected) HighlightSelection();
+        else RemoveSelection();
+        OnChipClicked();
     }
 
     public int GetValue()
@@ -39,25 +37,26 @@ public class Chip : MonoBehaviour
         _boxCollider.enabled = isClicable;
     }
 
-    public void Fall()
+    public IEnumerator Fall()
     {
         IsActive = false;
         GetComponent<Rigidbody>().useGravity = true;
         IsSelected = false;
-        // запустить корутину отключения фишки после падения
+
+        yield return new WaitForSeconds(2f);
+
+        gameObject.SetActive(false);
     }
 
     private void HighlightSelection()
-    {
-        if (IsSelected) return;
+    {        
         IsSelected = true;
         transform.position += new Vector3(0, 1f, 0);
-        OnChipClicked();
     }
 
     public void RemoveSelection()
     {
         IsSelected = false;
-        transform.position = _startingPosition;
+        transform.position = transform.parent.position;
     }
 }

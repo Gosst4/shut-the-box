@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -21,8 +22,9 @@ public class PlayerSetup : MonoBehaviour
         {
             foreach (Chip chip in chips)
             {
+                if (chip.gameObject.activeInHierarchy == false) continue;
                 if (chip.IsSelected)
-                    chip.Fall();
+                    StartCoroutine(chip.Fall());
                 else
                 {
                     chip.SetPossibleMove(false);
@@ -59,8 +61,27 @@ public class PlayerSetup : MonoBehaviour
         if (!HasAnyChips()) return false;
         foreach (Chip chip in chips)
         {
-            if (chip.IsActive && chip.GetValue() == diceResult) 
+            if (!chip.IsActive) continue;
+            if (chip.GetValue() == diceResult)
                 return true;
+            else if (CanMakeASum(chip, diceResult))
+                return true;
+        }
+        return false;
+    }
+
+    private bool CanMakeASum(Chip chip, int total)
+    {
+        for (int i = 1; i < chips.Count(); i++)
+        {
+            if (!chips[i].IsActive) continue;
+
+            int a = chips[i].GetValue();
+            int b = chip.GetValue();
+
+            if (a == b) continue;
+
+            if (a + b == total) return true;
         }
         return false;
     }
