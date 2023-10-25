@@ -4,6 +4,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     [SerializeField] Player[] allPlayers;
+    [SerializeField] GameOverScreen gameOverScreen;
 
     List<Player> players = new List<Player>();
     int currentId = 0;
@@ -52,9 +53,8 @@ public class Game : MonoBehaviour
     {
         if (IsGameOver())
         {
-            var gameOverScreen = FindObjectOfType<GameOverScreen>();
-            gameOverScreen?.gameObject.SetActive(true);
-            gameOverScreen?.UpdateWinnersText($"The winner is {players[currentId].Name}!");
+            gameOverScreen.gameObject.SetActive(true);
+            gameOverScreen.UpdateWinnersText(players[currentId].Name);
         }
     }
     private void DiceManager_OnAllRollsFinished(int _result)
@@ -71,14 +71,8 @@ public class Game : MonoBehaviour
     {
         foreach (var player in players)
         {
-            if (player.Score >= 45)
-            {
-                return true;
-            }
-            if (!player.Setup.HasAnyChips())
-            {
-                return true;
-            }
+            if (player.Score >= 10) return true;
+            if (!player.Setup.HasAnyChips()) return true;
         }
         return false;
     }

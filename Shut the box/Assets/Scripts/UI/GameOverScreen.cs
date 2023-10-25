@@ -15,8 +15,8 @@ public class GameOverScreen : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void UpdateWinnersText(string text)
+    public void UpdateWinnersText(string playerName)
     {
-        _winnerText.text = text;
+        _winnerText.text = $"The winner is {playerName}!";
     }
 }
