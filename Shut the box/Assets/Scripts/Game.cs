@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -16,6 +14,7 @@ public class Game : MonoBehaviour
         CreatePlayers(2);
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
         _currentPlayer = players[0];
+        RotateBoardTo(players[currentId]);
     }
 
     private void CreatePlayers(int number)
@@ -40,25 +39,30 @@ public class Game : MonoBehaviour
             }
             else { currentId++;  }
 
-            //currentId = (currentId == players.Count - 1) ? 0 : currentId + 1;
-            BoardRotator.Instance.RotateTo(players[currentId].Setup.transform.rotation.eulerAngles);
+            RotateBoardTo(players[currentId]);       
         }
+    }
+
+    private void RotateBoardTo(Player player)
+    {
+        BoardRotator.Instance.RotateTo(player.Setup.transform.localRotation.eulerAngles);
     }
 
     private void CheckWinners()
     {
         if (IsGameOver())
         {
-            Debug.Log("Game over!");
-            Debug.Log($"The winner is {players[currentId].Name}!");
+            var gameOverScreen = FindObjectOfType<GameOverScreen>();
+            gameOverScreen?.gameObject.SetActive(true);
+            gameOverScreen?.UpdateWinnersText($"The winner is {players[currentId].Name}!");
         }
     }
     private void DiceManager_OnAllRollsFinished(int _result)
     {
-/*        if (!players[currentId].Setup.CanMakeMove(_result))
-        {
-            NextPlayer();
-        }*/
+        /*        if (!players[currentId].Setup.CanMakeMove(_result))
+                {
+                    NextPlayer();
+                }*/
         players[currentId].UnblockMovement(_result);
         CheckWinners();
     }
