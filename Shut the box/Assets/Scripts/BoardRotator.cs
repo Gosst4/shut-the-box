@@ -33,7 +33,7 @@ public class BoardRotator : MonoBehaviour
         float timeElapsed = 0;
 
         var startPosition = transform.localRotation;
-        var targetPosition = Quaternion.Euler(eulerAngles);
+        var targetPosition = Quaternion.Euler(eulerAngles * (- 1));
 
         while (timeElapsed < _rotationDuration)
         {

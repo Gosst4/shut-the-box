@@ -5,6 +5,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] Player[] allPlayers;
     [SerializeField] GameOverScreen gameOverScreen;
+    [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
     List<Player> players = new List<Player>();
     int currentId = 0;
@@ -12,8 +13,13 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        CreatePlayers(2);
+        _playerSelectionScreen.OnPlayersNumberSelected += OnPlayersNumberSelected;        
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
+    }
+
+    private void OnPlayersNumberSelected(int number)
+    {
+        CreatePlayers(number);
         _currentPlayer = players[0];
         RotateBoardTo(players[currentId]);
     }
@@ -23,6 +29,11 @@ public class Game : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
             players.Add(allPlayers[i]);
+        }
+        foreach (Player player in allPlayers)
+        {
+            if (players.Contains(player)) continue;
+            else player.gameObject.SetActive(false);
         }
     }
 
@@ -46,7 +57,7 @@ public class Game : MonoBehaviour
 
     private void RotateBoardTo(Player player)
     {
-        BoardRotator.Instance.RotateTo(player.Setup.transform.localRotation.eulerAngles);
+        BoardRotator.Instance.RotateTo(player.TargetEulerAngles);
     }
 
     private void CheckWinners()
