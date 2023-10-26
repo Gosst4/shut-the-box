@@ -7,7 +7,7 @@ public class Game : MonoBehaviour
     [SerializeField] GameOverScreen _gameOverScreen;
     [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
-    List<Player> _players = new List<Player>();
+    Player[] _players;
     int _currentId = 0;
     int _pointsToWin;
 
@@ -20,28 +20,15 @@ public class Game : MonoBehaviour
 
     private void OnPlayersNumberSelected(int number)
     {
-        CreatePlayers(number);
+        _players = GameHelper.GetPlayers(number, _allPlayers);
         RotateBoardTo(_players[_currentId]);
-    }
-
-    private void CreatePlayers(int number)
-    {
-        for (int i = 0; i < number; i++)
-        {
-            _players.Add(_allPlayers[i]);
-        }
-        foreach (Player player in _allPlayers)
-        {
-            if (_players.Contains(player)) continue;
-            else player.gameObject.SetActive(false);
-        }
     }
 
     public void NextPlayer()
     {
         if (!BoardRotator.Instance.IsRotating)
         {
-            if (_currentId == _players.Count - 1)
+            if (_currentId == _players.Length - 1)
             {
                 _currentId = 0;
                 DiceManager.Instance.RestoreState();

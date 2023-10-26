@@ -81,7 +81,7 @@ public class PlayerSetup : MonoBehaviour
 
     private bool CanMakeASum(Chip chip, int total)
     {
-        for (int i = 1; i < chips.Length; i++)
+        for (int i = 0; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
 
@@ -94,14 +94,6 @@ public class PlayerSetup : MonoBehaviour
         }
         return false;
     }
-
-/*    public void SetClickability(bool isClickable)
-    {
-        foreach(Chip chip in chips)
-        {
-            chip.SetClickability(isClickable);
-        }
-    }*/
 
     public bool HasAnyChips()
     {
