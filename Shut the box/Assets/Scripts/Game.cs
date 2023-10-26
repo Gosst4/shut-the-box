@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
             else { _currentId++;  }
 
             RotateBoardTo(_players[_currentId]);
-            DiceManager.Instance.DiceSelection(false);
+            DiceManager.Instance.HideDiceSelection(true);
         }
     }
 

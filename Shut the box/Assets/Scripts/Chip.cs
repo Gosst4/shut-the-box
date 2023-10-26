@@ -71,6 +71,18 @@ public class Chip : MonoBehaviour
         IsSelected = false;
         transform.position = transform.parent.position;
     }
+
+    public bool HasMatch(Chip[] chips, int total)
+    {
+        foreach (var chip in chips)
+        {
+            if (!chip.IsActive) continue;
+            if (GetValue() == chip.GetValue()) continue;
+            if (GetValue() + chip.GetValue() == total)            
+                return true;            
+        }
+        return false;
+    }
     private void HighlightSelection()
     {
         IsSelected = true;

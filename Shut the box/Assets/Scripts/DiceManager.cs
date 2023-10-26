@@ -90,7 +90,7 @@ public class DiceManager : MonoBehaviour
         }
     }
 
-    public void DiceSelection(bool isSelected)
+    public void HideDiceSelection(bool isSelected)
     {
         _tintOverDiceSelection.SetActive(isSelected);
     }
@@ -150,7 +150,7 @@ public class DiceManager : MonoBehaviour
 
     public void RestoreState()
     {
-        DiceSelection(true);
+        HideDiceSelection(true);
         UpdateNumberOfDice(2);
     }
 }

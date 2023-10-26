@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI _playerNametext;
+    [SerializeField] TextMeshProUGUI _scoreText;
 
     public void UpdateText(int score)
     {
-        text.text = score.ToString();
+        _scoreText.text = score.ToString();
     }
 }

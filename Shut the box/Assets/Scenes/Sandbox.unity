@@ -1875,6 +1875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630073881}
     m_Modifications:
+    - target: {fileID: 5152975670609990655, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
+      propertyPath: m_text
+      value: Player 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5268094426942893501, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
       propertyPath: m_Name
       value: Player (3)
@@ -3484,6 +3488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630073881}
     m_Modifications:
+    - target: {fileID: 5152975670609990655, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
+      propertyPath: m_text
+      value: Player 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5268094426942893501, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
       propertyPath: m_Name
       value: Player (2)
@@ -4320,6 +4328,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630073881}
     m_Modifications:
+    - target: {fileID: 5152975670609990655, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
+      propertyPath: m_text
+      value: Player 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5268094426942893501, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
       propertyPath: m_Name
       value: Player (5)
@@ -5544,6 +5556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630073881}
     m_Modifications:
+    - target: {fileID: 5152975670609990655, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
+      propertyPath: m_text
+      value: Player 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5268094426942893501, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -6440,6 +6456,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630073881}
     m_Modifications:
+    - target: {fileID: 5152975670609990655, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
+      propertyPath: m_text
+      value: Player 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5268094426942893501, guid: ca71328528e0ad14ab9a72201467b400, type: 3}
       propertyPath: m_Name
       value: Player (4)

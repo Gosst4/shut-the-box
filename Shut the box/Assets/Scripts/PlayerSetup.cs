@@ -24,7 +24,7 @@ public class PlayerSetup : MonoBehaviour
                 {
                     StartCoroutine(chip.Fall());
 
-                    if (!HasMoreThanSix()) DiceManager.Instance.DiceSelection(false);
+                    if (!HasMoreThanSix()) DiceManager.Instance.HideDiceSelection(false);
                 }
                 else
                 {
@@ -40,7 +40,11 @@ public class PlayerSetup : MonoBehaviour
         for (int i = 0; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
-            if (chips[i].GetValue() <= diceValue)
+            if (chips[i].GetValue() == diceValue)
+            {
+                chips[i].SetPossibleMove(true);
+            }
+            else if (chips[i].HasMatch(chips, diceValue))
             {
                 chips[i].SetPossibleMove(true);
             }
@@ -81,12 +85,13 @@ public class PlayerSetup : MonoBehaviour
 
     private bool CanMakeASum(Chip chip, int total)
     {
+        int a = chip.GetValue();
+
         for (int i = 0; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
 
-            int a = chips[i].GetValue();
-            int b = chip.GetValue();
+            int b = chips[i].GetValue();            
 
             if (a == b) continue;
 
