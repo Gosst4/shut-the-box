@@ -2510,14 +2510,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e5f2684a835f74fbf240a23a4fdbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allPlayers:
+  _allPlayers:
   - {fileID: 1636796895}
   - {fileID: 1083924080}
   - {fileID: 369603306}
   - {fileID: 1732469275}
   - {fileID: 373802619}
   - {fileID: 1781973881}
-  gameOverScreen: {fileID: 1572743523}
+  _gameOverScreen: {fileID: 1572743523}
   _playerSelectionScreen: {fileID: 820240870}
 --- !u!1 &599150921
 GameObject:

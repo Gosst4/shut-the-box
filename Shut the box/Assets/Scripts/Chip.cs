@@ -39,6 +39,9 @@ public class Chip : MonoBehaviour
 
     public IEnumerator Fall()
     {
+        IsActive = false;
+        IsSelected = false;
+
         float timeElapsed = 0;
 
         var startPosition = transform.parent.position;
@@ -50,13 +53,8 @@ public class Chip : MonoBehaviour
 
             timeElapsed += Time.deltaTime;
             yield return null;
-        }
-
-        IsActive = false;
-        IsSelected = false;
-
-        //yield return new WaitForSeconds(2f);
-
+        }     
+        
         gameObject.SetActive(false);
     }
 

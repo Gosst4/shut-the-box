@@ -24,7 +24,7 @@ public class PlayerSetup : MonoBehaviour
                 {
                     StartCoroutine(chip.Fall());
 
-                    if (!HasMoreThanSix()) DiceManager.Instance.ShowDiceSelection(false);
+                    if (!HasMoreThanSix()) DiceManager.Instance.DiceSelection(false);
                 }
                 else
                 {
@@ -72,8 +72,7 @@ public class PlayerSetup : MonoBehaviour
     }
 
     public void RestoreSetup()
-    {
-        DiceManager.Instance.ShowDiceSelection(true);
+    {        
         foreach (Chip chip in chips)
         {
             chip.RestoreState();

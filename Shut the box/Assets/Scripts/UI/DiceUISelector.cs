@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DiceUISelector : MonoBehaviour
 {
-    DiceManager game;
+    DiceManager _diceManager;
     private void Awake()
     {
-        game = FindObjectOfType<DiceManager>();
+        _diceManager = FindObjectOfType<DiceManager>();
     }
     public void SelectNumberOfDices(int number)
     {
-        game.UpdateNumberOfDice(number);
+        _diceManager.UpdateNumberOfDice(number);
     }    
 }

@@ -3,36 +3,36 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] Player[] allPlayers;
-    [SerializeField] GameOverScreen gameOverScreen;
+    [SerializeField] Player[] _allPlayers;
+    [SerializeField] GameOverScreen _gameOverScreen;
     [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
-    List<Player> players = new List<Player>();
-    int currentId = 0;
-    Player _currentPlayer;
+    List<Player> _players = new List<Player>();
+    int _currentId = 0;
+    int _pointsToWin;
 
     private void Start()
     {
         _playerSelectionScreen.OnPlayersNumberSelected += OnPlayersNumberSelected;        
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
+        _pointsToWin = 45;
     }
 
     private void OnPlayersNumberSelected(int number)
     {
         CreatePlayers(number);
-        _currentPlayer = players[0];
-        RotateBoardTo(players[currentId]);
+        RotateBoardTo(_players[_currentId]);
     }
 
     private void CreatePlayers(int number)
     {
         for (int i = 0; i < number; i++)
         {
-            players.Add(allPlayers[i]);
+            _players.Add(_allPlayers[i]);
         }
-        foreach (Player player in allPlayers)
+        foreach (Player player in _allPlayers)
         {
-            if (players.Contains(player)) continue;
+            if (_players.Contains(player)) continue;
             else player.gameObject.SetActive(false);
         }
     }
@@ -41,17 +41,19 @@ public class Game : MonoBehaviour
     {
         if (!BoardRotator.Instance.IsRotating)
         {
-            if (currentId == players.Count - 1)
+            if (_currentId == _players.Count - 1)
             {
-                currentId = 0;
-                foreach (Player player in players)
+                _currentId = 0;
+                DiceManager.Instance.RestoreState();
+                foreach (Player player in _players)
                 {
                     player.Setup.RestoreSetup();
                 }
             }
-            else { currentId++;  }
+            else { _currentId++;  }
 
-            RotateBoardTo(players[currentId]);       
+            RotateBoardTo(_players[_currentId]);
+            DiceManager.Instance.DiceSelection(false);
         }
     }
 
@@ -64,8 +66,8 @@ public class Game : MonoBehaviour
     {
         if (IsGameOver())
         {
-            gameOverScreen.gameObject.SetActive(true);
-            gameOverScreen.UpdateWinnersText(players[currentId].Name);
+            _gameOverScreen.gameObject.SetActive(true);
+            _gameOverScreen.UpdateWinnersText(_players[_currentId].Name);
         }
     }
     private void DiceManager_OnAllRollsFinished(int _result)
@@ -74,15 +76,15 @@ public class Game : MonoBehaviour
                 {
                     NextPlayer();
                 }*/
-        players[currentId].UnblockMovement(_result);
+        _players[_currentId].UnblockMovement(_result);
         CheckWinners();
     }
 
     private bool IsGameOver()
     {
-        foreach (var player in players)
+        foreach (var player in _players)
         {
-            if (player.Score >= 10) return true;
+            if (player.Score >= _pointsToWin) return true;
             if (!player.Setup.HasAnyChips()) return true;
         }
         return false;
