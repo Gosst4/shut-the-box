@@ -13,6 +13,7 @@ public class GameOverScreen : MonoBehaviour
     public void OnStartAgainClick()
     {
         gameObject.SetActive(false);
+        FindObjectOfType<Game>().Restart();
     }
 
     public void UpdateWinnersText(string playerName)

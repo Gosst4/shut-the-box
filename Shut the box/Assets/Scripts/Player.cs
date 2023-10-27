@@ -39,6 +39,12 @@ public class Player : MonoBehaviour
         scoreDisplay.SetPlayerName(Name);
     }
 
+    public void ResetScore()
+    {
+        Score = 0; 
+        UpdateScoreInUi(Score);
+    }
+
     private void UpdateScoreInUi(int score)
     {
         scoreDisplay.UpdateScoreText(score);

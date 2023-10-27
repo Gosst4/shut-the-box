@@ -18,6 +18,19 @@ public class Game : MonoBehaviour
         _pointsToWin = 45;
     }
 
+    public void Restart()
+    {
+        foreach (var player in _allPlayers)
+        {
+            player.gameObject.SetActive(true);
+            player.ResetScore();
+            player.Setup.RestoreSetup();
+        }
+        _playerSelectionScreen.gameObject.SetActive(true);
+        _currentId = 0;
+        ResetBoard();
+    }
+
     private void OnPlayersNumberSelected(int number)
     {
         _players = GameHelper.GetPlayers(number, _allPlayers);
@@ -39,10 +52,15 @@ public class Game : MonoBehaviour
             }
             else { _currentId++;  }
 
-            RotateBoardTo(_players[_currentId]);
-            DiceManager.Instance.HideDiceSelection(true);
-            DiceManager.Instance.CanRollDice(true);
+            ResetBoard();
         }
+    }
+
+    private void ResetBoard()
+    {
+        RotateBoardTo(_players[_currentId]);
+        DiceManager.Instance.HideDiceSelection(true);
+        DiceManager.Instance.CanRollDice(true);
     }
 
     private void RotateBoardTo(Player player)
@@ -52,10 +70,10 @@ public class Game : MonoBehaviour
 
     private void CheckWinners()
     {
-        if (IsGameOver())
+        if (IsGameOver(out int id))
         {
             _gameOverScreen.gameObject.SetActive(true);
-            _gameOverScreen.UpdateWinnersText(_players[_currentId].Name);
+            _gameOverScreen.UpdateWinnersText(_players[id].Name);
         }
     }
     private void DiceManager_OnAllRollsFinished(int _result)
@@ -68,13 +86,17 @@ public class Game : MonoBehaviour
         CheckWinners();
     }
 
-    private bool IsGameOver()
+    private bool IsGameOver(out int winnerId)
     {
-        foreach (var player in _players)
+        for (int i = 0; i < _players.Length; i++)
         {
-            if (player.Score >= _pointsToWin) return true;
-            if (!player.Setup.HasAnyChips()) return true;
+            if (_players[i].Score >= _pointsToWin || !_players[i].Setup.HasAnyChips())
+            {
+                winnerId = i;
+                return true;
+            }
         }
+        winnerId = -1;
         return false;
     }
 }
