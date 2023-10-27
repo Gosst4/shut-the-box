@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] ScoreDisplay scoreDisplay;
+
     public string Name { get; private set; }
     public int Score { get; private set; }
     public PlayerSetup Setup { get; private set; }
@@ -27,7 +29,18 @@ public class Player : MonoBehaviour
         else
         {
             Score += Setup.CalculateRound();
-            Setup.UpdateScoreInUi(Score);
+            UpdateScoreInUi(Score);
         }
+    }
+
+    public void SetPlayerName(string name)
+    {
+        Name = name;
+        scoreDisplay.SetPlayerName(Name);
+    }
+
+    private void UpdateScoreInUi(int score)
+    {
+        scoreDisplay.UpdateScoreText(score);
     }
 }

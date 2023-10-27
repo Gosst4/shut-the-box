@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273883fa5b3c2074196931c04af8ee0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 2541558350349649304}
 --- !u!114 &583577750984164580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +302,6 @@ MonoBehaviour:
   - {fileID: 799064835209604194}
   - {fileID: 799064835609781312}
   - {fileID: 799064834049777432}
-  scoreDisplay: {fileID: 2541558350349649304}
 --- !u!1 &5682982396943058627
 GameObject:
   m_ObjectHideFlags: 0

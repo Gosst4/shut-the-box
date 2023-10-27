@@ -32,9 +32,14 @@ public static class GameHelper
             }
         }
 
+        int index = 1;
         foreach (Player player in _allPlayers)
         {
-            if (_players.Contains(player)) continue;
+            if (_players.Contains(player)) 
+            {
+                player.SetPlayerName($"Player {index}");
+                index++;
+            }
             else player.gameObject.SetActive(false);
         }
 

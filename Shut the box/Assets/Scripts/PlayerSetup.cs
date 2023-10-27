@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerSetup : MonoBehaviour
 {
     [SerializeField] Chip[] chips;
-    [SerializeField] ScoreDisplay scoreDisplay;
 
     private void Start()
     {
@@ -108,11 +107,6 @@ public class PlayerSetup : MonoBehaviour
         }
         Debug.Log("There is a winner!");
         return false;
-    }
-
-    internal void UpdateScoreInUi(int score)
-    {
-        scoreDisplay.UpdateText(score);
     }
     
     private bool HasMoreThanSix()
