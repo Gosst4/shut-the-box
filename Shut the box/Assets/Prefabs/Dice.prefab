@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8911606916776807959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3351475453691942977}
@@ -65,8 +65,8 @@ MonoBehaviour:
   _mask:
     serializedVersion: 2
     m_Bits: 64
-  _rollForce: 20
-  _torque: 20
+  _rollForce: 25
+  _torque: 30
   _startHeight: 5
 --- !u!1001 &8911606915252651434
 PrefabInstance:
@@ -75,6 +75,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8911606916776807961}
     m_Modifications:
+    - target: {fileID: 2068225425260951110, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2068225425260951110, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_Material
       value: 

@@ -19,14 +19,13 @@ public class Dice : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    public IEnumerator RollDice()
+    public IEnumerator RollDice(int pos)
     {
         StopAllCoroutines();
         _isRolling = true;
         
-        transform.position = new Vector3(0, _startHeight, 0);
-        transform.rotation = Quaternion.identity;
-        _rb.AddForce(transform.up * 10, ForceMode.Impulse);
+        transform.position = new Vector3(pos, _startHeight, pos);
+        _rb.AddForce(transform.up * _rollForce, ForceMode.Impulse);
         _rb.AddTorque(GetRandFl(_torque), GetRandFl(_torque), GetRandFl(_torque), ForceMode.Impulse);
 
         yield return StartCoroutine(WaitForDiceToStop());
@@ -65,7 +64,7 @@ public class Dice : MonoBehaviour
 
         for (int i = 0; i < directions.Length; i++)
         {
-            if (!Physics.Raycast(transform.position, directions[i], 1f, _mask)) continue;
+            if (!Physics.Raycast(transform.position, directions[i], 3f, _mask)) continue;
             return i + 1;
         }
         Debug.Log("Error getting die value.");

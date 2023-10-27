@@ -118,10 +118,16 @@ public class PlayerSetup : MonoBehaviour
     private int CalculateSelectedChips()
     {
         int total = 0;
-        foreach (Chip chip in chips)
+        int numberOfChips = 0;
+    
+        for (int i = 0; i < chips.Length; i++)
         {
-            if (chip.IsSelected)
-                total += chip.GetValue();
+            if (chips[i].IsSelected)
+            {
+                total += chips[i].GetValue();
+                numberOfChips++;
+            }
+            if (numberOfChips == 2) break;
         }
         return total;
     }

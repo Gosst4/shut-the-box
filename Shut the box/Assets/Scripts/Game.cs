@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -61,6 +62,7 @@ public class Game : MonoBehaviour
         RotateBoardTo(_players[_currentId]);
         DiceManager.Instance.HideDiceSelection(true);
         DiceManager.Instance.CanRollDice(true);
+        DiceManager.Instance.UpdateNumberOfDice(2);
     }
 
     private void RotateBoardTo(Player player)

@@ -42,9 +42,11 @@ public class DiceManager : MonoBehaviour
     private void PregenerateDicePool(int v)
     {
         dicePool.Clear();
+        int pos = 0;
         for (int i = 0; i < v; i++)
         {
-            Dice dice = Instantiate(dicePrefab, new Vector3(i + 1, i, i + 1), Quaternion.identity);
+            Dice dice = Instantiate(dicePrefab, new Vector3(pos, 2, pos), Quaternion.identity);
+            pos += 3;
             dice.transform.parent = transform;
             dicePool.Add(dice);
             dice.OnRollFinished += Dice_OnRollFinished;
@@ -139,10 +141,13 @@ public class DiceManager : MonoBehaviour
         AllDiceResult = 0;
         numberDisplay.UpdateText(AllDiceResult);
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
-        for(int i = 0; i < currentDices.Count; i++)
+
+        int pos = 0;
+        for (int i = 0; i < currentDices.Count; i++)
         {
-            Coroutine c = StartCoroutine(currentDices[i].RollDice());
+            Coroutine c = StartCoroutine(currentDices[i].RollDice(pos));
             coroutines[i] = c;
+            pos += 2;
         }
         foreach (Coroutine c in coroutines)
         {
