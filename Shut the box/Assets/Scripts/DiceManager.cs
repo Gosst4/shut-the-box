@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceManager : MonoBehaviour
 {   
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
     [SerializeField] GameObject _tintOverDiceSelection;
+    [SerializeField] Button _rollButton;
 
     public int AllDiceResult {  get; private set; }
 
@@ -34,6 +36,7 @@ public class DiceManager : MonoBehaviour
     {
         PregenerateDicePool(startingNumberOfDice);
         InstantiateDices(startingNumberOfDice);
+        CanRollDice(true);
     }
 
     private void PregenerateDicePool(int v)
@@ -53,8 +56,14 @@ public class DiceManager : MonoBehaviour
     {
         if (!Dice._isRolling)
         {
+            CanRollDice(false);
             StartCoroutine(RollAllDice());
         }
+    }
+
+    public void CanRollDice(bool isAllowed)
+    {
+        _rollButton.interactable = isAllowed;
     }
 
     public void UpdateNumberOfDice(int number)

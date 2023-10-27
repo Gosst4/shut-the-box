@@ -22,6 +22,7 @@ public class PlayerSetup : MonoBehaviour
                 if (chip.IsSelected)
                 {
                     StartCoroutine(chip.Fall());
+                    DiceManager.Instance.CanRollDice(true);
 
                     if (!HasMoreThanSix()) DiceManager.Instance.HideDiceSelection(false);
                 }

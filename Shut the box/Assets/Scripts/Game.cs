@@ -41,6 +41,7 @@ public class Game : MonoBehaviour
 
             RotateBoardTo(_players[_currentId]);
             DiceManager.Instance.HideDiceSelection(true);
+            DiceManager.Instance.CanRollDice(true);
         }
     }
 
