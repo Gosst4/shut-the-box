@@ -66,7 +66,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _rollForce: 25
-  _torque: 30
+  _torque: 20
   _startHeight: 5
 --- !u!1001 &8911606915252651434
 PrefabInstance:
