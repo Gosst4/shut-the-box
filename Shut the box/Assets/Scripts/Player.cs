@@ -20,16 +20,18 @@ public class Player : MonoBehaviour
         TargetEulerAngles = transform.localEulerAngles;
     }
 
-    public void UnblockMovement(int diceResult)
+    public bool TryTakeTurn(int diceResult)
     {
         if (Setup.CanMakeMove(diceResult))
         {
             Setup.ShowPossibleMoves(diceResult);
+            return true;
         }
         else
         {
             Score += Setup.CalculateRound();
             UpdateScoreInUi(Score);
+            return false;
         }
     }
 

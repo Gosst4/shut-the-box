@@ -106,6 +106,14 @@ public class DiceManager : MonoBehaviour
         _tintOverDiceSelection.SetActive(isSelected);
     }
 
+    public void Reset()
+    {
+        //BoardRotator.Instance.RotateTo(_players[_currentId].TargetEulerAngles);
+        HideDiceSelection(true);
+        CanRollDice(true);
+        UpdateNumberOfDice(2);
+    }
+
     private void InstantiateDices(int numberOfDice)
     {
         currentDices.Clear();

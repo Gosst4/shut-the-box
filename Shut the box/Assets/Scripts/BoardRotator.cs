@@ -28,6 +28,8 @@ public class BoardRotator : MonoBehaviour
 
     IEnumerator RotateToCoroutine(Vector3 eulerAngles)
     {
+        yield return new WaitForSeconds(3f);
+
         IsRotating = true;
         float timeElapsed = 0;
 
