@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerSetup : MonoBehaviour
 {
@@ -129,9 +128,11 @@ public class PlayerSetup : MonoBehaviour
             {
                 total += chips[i].GetValue();
                 numberOfChips++;
-            }
-            if (numberOfChips == 2) break;
+            }            
         }
+
+        if (numberOfChips >= 3) return -1;
+        
         return total;
     }
 }
