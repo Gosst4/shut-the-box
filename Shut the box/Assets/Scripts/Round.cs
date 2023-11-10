@@ -3,19 +3,16 @@ using System;
 public class Round 
 {
     int _currentId = 0;
-    int _pointsToWin;
-    public Player[] Players { get; }
+    public Player[] _players;
 
     public event Action<Player[]> OnRoundFinished;
 
     public Round(Player[] players)
     {
-        Players = players;
-        _pointsToWin = 45;
+        _players = players;        
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
-        _currentId = 0;
-        BoardRotator.Instance.RotateTo(Players[_currentId].TargetEulerAngles);
-        foreach (var player in Players)
+        BoardRotator.Instance.RotateTo(_players[_currentId].TargetEulerAngles, 1f);
+        foreach (var player in _players)
         {
             player.Setup.RestoreSetup();
         }
@@ -23,46 +20,24 @@ public class Round
 
     public void NextPlayer()
     {
-        if (_currentId == Players.Length - 1)
+        if (_currentId == _players.Length - 1)
         {
-            OnRoundFinished(Players);
+            OnRoundFinished(_players);
+            DiceManager.Instance.OnAllRollsFinished -= DiceManager_OnAllRollsFinished;
         }
         else
         {
             _currentId++;
-            BoardRotator.Instance.RotateTo(Players[_currentId].TargetEulerAngles);
+            BoardRotator.Instance.RotateTo(_players[_currentId].TargetEulerAngles, 1f);
             DiceManager.Instance.Reset();
         }
     }
 
     private void DiceManager_OnAllRollsFinished(int _result)
     {
-        bool hasMoreMoves = Players[_currentId].TryTakeTurn(_result);
-        CheckWinners();
+        bool hasMoreMoves = _players[_currentId].TryTakeTurn(_result);
+        Game.Instance.CheckWinners();
 
         if (!hasMoreMoves) NextPlayer();
-    }
-
-    private void CheckWinners()
-    {
-        if (IsGameOver(out int id))
-        {
-            //_gameOverScreen.gameObject.SetActive(true);
-            //_gameOverScreen.UpdateWinnersText(Players[id].Name);
-        }
-    }
-
-    private bool IsGameOver(out int winnerId)
-    {
-        for (int i = 0; i < Players.Length; i++)
-        {
-            if (Players[i].Score >= _pointsToWin || !Players[i].Setup.HasAnyChips())
-            {
-                winnerId = i;
-                return true;
-            }
-        }
-        winnerId = -1;
-        return false;
     }
 }

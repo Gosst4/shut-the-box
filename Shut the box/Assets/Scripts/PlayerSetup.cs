@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerSetup : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerSetup : MonoBehaviour
                     DiceManager.Instance.CanRollDice(true);
 
                     if (!HasMoreThanSix()) DiceManager.Instance.HideDiceSelection(false);
+
+                    Game.Instance.CheckWinners();
                 }
                 else
                 {
