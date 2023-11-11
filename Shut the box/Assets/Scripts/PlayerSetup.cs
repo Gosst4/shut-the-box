@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSetup : MonoBehaviour
 {
+    [SerializeField] public ScoreDisplay scoreDisplay;
     [SerializeField] Chip[] chips;
+
+    public Vector3 TargetEulerAngles { get; private set; }
 
     private void Start()
     {
@@ -10,6 +14,8 @@ public class PlayerSetup : MonoBehaviour
         {
             chip.OnChipClicked += Chip_OnChipClicked;
         }
+
+        TargetEulerAngles = transform.localEulerAngles;        
     }
 
     private void Chip_OnChipClicked()
@@ -37,20 +43,25 @@ public class PlayerSetup : MonoBehaviour
         }
     }
 
-    public void ShowPossibleMoves(int diceValue)
+    public List<Chip> ShowPossibleMoves(int diceValue)
     {
+        List<Chip> possibleMoves= new List<Chip>();
+
         for (int i = 0; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
             if (chips[i].GetValue() == diceValue)
             {
                 chips[i].SetPossibleMove(true);
+                possibleMoves.Add(chips[i]);
             }
             else if (chips[i].HasMatch(chips, diceValue))
             {
                 chips[i].SetPossibleMove(true);
+                possibleMoves.Add(chips[i]);
             }
-        }    
+        }   
+        return possibleMoves;
     }
     public int CalculateRound()
     {
@@ -83,6 +94,10 @@ public class PlayerSetup : MonoBehaviour
         {
             chip.RestoreState();
         }
+    }
+    public void UpdateScoreInUi(int score)
+    {
+        scoreDisplay.UpdateScoreText(score);
     }
 
     private bool CanMakeASum(Chip chip, int total)

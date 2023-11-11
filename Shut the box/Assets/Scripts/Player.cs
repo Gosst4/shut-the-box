@@ -1,54 +1,27 @@
+using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public abstract class Player : MonoBehaviour
 {
-    [SerializeField] ScoreDisplay scoreDisplay;
-
     public string Name { get; private set; }
-    public int Score { get; private set; }
-    public PlayerSetup Setup { get; private set; }
+    public int Score { get; protected set; }
+    public PlayerSetup Setup { get; protected set; }
+    public PlayerType PlayerType { get; protected set; }
 
-    public Vector3 TargetEulerAngles { get; private set; }
-
-    private void Awake()
-    {
-        Setup = GetComponent<PlayerSetup>();
-    }
-
-    private void Start()
-    {
-        TargetEulerAngles = transform.localEulerAngles;
-    }
-
-    public bool TryTakeTurn(int diceResult)
-    {
-        if (Setup.CanMakeMove(diceResult))
-        {
-            Setup.ShowPossibleMoves(diceResult);
-            return true;
-        }
-        else
-        {
-            Score += Setup.CalculateRound();
-            UpdateScoreInUi(Score);
-            return false;
-        }
-    }
+    public abstract bool TryTakeTurn(int diceResult);
+    public abstract void UnblockMovement();
 
     public void SetPlayerName(string name)
     {
         Name = name;
-        scoreDisplay.SetPlayerName(Name);
+        Setup.scoreDisplay.SetPlayerName(Name);
     }
 
     public void ResetScore()
     {
         Score = 0; 
-        UpdateScoreInUi(Score);
-    }
-
-    private void UpdateScoreInUi(int score)
-    {
-        scoreDisplay.UpdateScoreText(score);
+        Setup.UpdateScoreInUi(Score);
     }
 }
+
+public enum PlayerType { Human, Computer}

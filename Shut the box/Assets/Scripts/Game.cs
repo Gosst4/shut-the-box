@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] Player[] _allPlayers;
+    [SerializeField] PlayerSetup[] _allPlayerSetups;
     [SerializeField] GameOverScreen _gameOverScreen;
     [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
@@ -31,11 +31,11 @@ public class Game : MonoBehaviour
 
     public void Restart()
     {
-        foreach (var player in _allPlayers)
+        foreach (var setup in _allPlayerSetups)
         {
-            player.gameObject.SetActive(true);
-            player.ResetScore();
-            player.Setup.RestoreSetup();
+            setup.gameObject.SetActive(true);
+            //setup.GetComponent<Player>().ResetScore();
+            setup.RestoreSetup();
         }
         _playerSelectionScreen.gameObject.SetActive(true);
 
@@ -44,7 +44,7 @@ public class Game : MonoBehaviour
 
     private void OnPlayersNumberSelected(int number)
     {
-        _players = GameHelper.GetPlayers(number, _allPlayers);
+        _players = GameHelper.GetPlayers(number, _allPlayerSetups);
         _round = new Round(_players);
         _round.OnRoundFinished += Round_OnRoundFinished;
     }

@@ -11,7 +11,7 @@ public class Round
     {
         _players = players;        
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
-        BoardRotator.Instance.RotateTo(_players[_currentId].TargetEulerAngles, 1f);
+        BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);
         foreach (var player in _players)
         {
             player.Setup.RestoreSetup();
@@ -28,8 +28,8 @@ public class Round
         else
         {
             _currentId++;
-            BoardRotator.Instance.RotateTo(_players[_currentId].TargetEulerAngles, 1f);
-            DiceManager.Instance.Reset();
+            BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);            
+            _players[_currentId].UnblockMovement();
         }
     }
 
@@ -39,5 +39,6 @@ public class Round
         Game.Instance.CheckWinners();
 
         if (!hasMoreMoves) NextPlayer();
+
     }
 }

@@ -241,7 +241,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848120201288333522}
-  - component: {fileID: 8199498009853654380}
   - component: {fileID: 583577750984164580}
   m_Layer: 0
   m_Name: Player
@@ -267,19 +266,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8199498009853654380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5268094426942893501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273883fa5b3c2074196931c04af8ee0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 2541558350349649304}
 --- !u!114 &583577750984164580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb89cdeaa58f5b4a9a9ec435c7d0c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 2541558350349649304}
   chips:
   - {fileID: 1931988414385449087}
   - {fileID: 799064833945598313}

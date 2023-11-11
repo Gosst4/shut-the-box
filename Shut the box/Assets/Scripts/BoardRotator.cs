@@ -23,7 +23,13 @@ public class BoardRotator : MonoBehaviour
     public void RotateTo(Vector3 eulerAngles, float rotateAfter)
     {
         if (IsRotating) return;
-        StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
+        StartCoroutine(WaitForRotation(eulerAngles, rotateAfter));
+    }
+
+    IEnumerator WaitForRotation(Vector3 eulerAngles, float rotateAfter)
+    {
+        Coroutine c = StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
+        yield return c;
     }
 
     IEnumerator RotateToCoroutine(Vector3 eulerAngles, float rotateAfter)

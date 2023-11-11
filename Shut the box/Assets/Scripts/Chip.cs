@@ -83,6 +83,12 @@ public class Chip : MonoBehaviour
         }
         return false;
     }
+
+    public void Select()
+    {
+        HighlightSelection();
+        OnChipClicked();
+    }
     private void HighlightSelection()
     {
         IsSelected = true;
