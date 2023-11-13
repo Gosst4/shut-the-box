@@ -23,10 +23,10 @@ public class Dice : MonoBehaviour
     {
         StopAllCoroutines();
         _isRolling = true;
-        
-        transform.position = new Vector3(pos, _startHeight, pos);
-        _rb.AddForce(transform.up * _rollForce, ForceMode.Impulse);
-        _rb.AddTorque(GetRandFl(_torque), GetRandFl(_torque), GetRandFl(_torque), ForceMode.Impulse);
+        transform.position = new Vector3(pos, _startHeight, -15);
+        _rb.AddForce(new Vector3(0, -1, 1) * _rollForce, ForceMode.Impulse);
+        // yield return null;
+        _rb.AddTorque(GetRandFl(_torque), 0, GetRandFl(_torque), ForceMode.Impulse);
 
         yield return StartCoroutine(WaitForDiceToStop());
 
