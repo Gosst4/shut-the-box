@@ -142,12 +142,12 @@ public class DiceManager : MonoBehaviour
         numberDisplay.UpdateText(AllDiceResult);
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
 
-        int pos = 0;
+        int pos = 5;
         for (int i = 0; i < currentDices.Count; i++)
         {
             Coroutine c = StartCoroutine(currentDices[i].RollDice(pos));
             coroutines[i] = c;
-            pos += 2;
+            // pos += 6;
         }
         foreach (Coroutine c in coroutines)
         {
