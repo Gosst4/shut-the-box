@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ComputerPlayer : Player
-{    
+{
+    Difficulty _difficulty; 
+
     private void Awake()
     {
         Setup = GetComponent<PlayerSetup>();
@@ -29,6 +31,11 @@ public class ComputerPlayer : Player
         }
     }
 
+    public void SetDifficulty(Difficulty difficulty)
+    {
+        _difficulty = difficulty;
+    }
+
     private IEnumerator RollDice()
     {
         yield return new WaitForSeconds(3f);
@@ -49,6 +56,12 @@ public class ComputerPlayer : Player
 
         yield return new WaitForSeconds(1f);
 
+        HardMove(diceResult, chips);
+        yield return new WaitForSeconds(1f);
+    }
+
+    private void EasyMove(int diceResult, List<Chip> chips)
+    {
         for (int i = 0; i < chips.Count; i++)
         {
             if (chips[i].GetValue() == diceResult)
@@ -63,7 +76,24 @@ public class ComputerPlayer : Player
                 break;
             }
         }
-        yield return new WaitForSeconds(1f);
+    }
+
+    private void HardMove(int diceResult, List<Chip> chips)
+    {
+        for (int i = chips.Count - 1; i >= 0; i--)
+        {
+            if (chips[i].GetValue() == diceResult)
+            {
+                chips[i].Select();
+                break;
+            }
+            else if (chips[i].HasMatch(chips.ToArray(), diceResult))
+            {
+                chips[i].Select();
+                GetMatch(chips[i], chips, diceResult).Select();
+                break;
+            }
+        }
     }
 
     public Chip GetMatch(Chip chipToCompare, List<Chip> chips, int total)
@@ -75,4 +105,11 @@ public class ComputerPlayer : Player
         }
         return null;
     }
+}
+
+public enum Difficulty
+{
+    Easy,
+    Normal,
+    Hard
 }

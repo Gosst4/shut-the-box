@@ -34,7 +34,6 @@ public class Game : MonoBehaviour
         foreach (var setup in _allPlayerSetups)
         {
             setup.gameObject.SetActive(true);
-            //setup.GetComponent<Player>().ResetScore();
             setup.RestoreSetup();
         }
         _playerSelectionScreen.gameObject.SetActive(true);
