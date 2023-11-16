@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Bits: 64
   _rollForce: 35
   _torque: 10
-  _startHeight: 20
+  _startHeight: 9
 --- !u!1001 &8911606915252651434
 PrefabInstance:
   m_ObjectHideFlags: 0

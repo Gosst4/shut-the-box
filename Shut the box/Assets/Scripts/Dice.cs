@@ -23,7 +23,7 @@ public class Dice : MonoBehaviour
     {
         StopAllCoroutines();
         _isRolling = true;
-        transform.position = new Vector3(pos, _startHeight, -15);
+        transform.position = new Vector3(pos, _startHeight, -9);
         _rb.AddForce(new Vector3(0, -1, 1) * _rollForce, ForceMode.Impulse);
         // yield return null;
         _rb.AddTorque(GetRandFl(_torque), 0, GetRandFl(_torque), ForceMode.Impulse);
