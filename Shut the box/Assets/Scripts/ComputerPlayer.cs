@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerPlayer : Player
+public abstract class ComputerPlayer : Player
 {
-    Difficulty _difficulty; 
-
     private void Awake()
     {
         Setup = GetComponent<PlayerSetup>();
@@ -31,10 +29,7 @@ public class ComputerPlayer : Player
         }
     }
 
-    public void SetDifficulty(Difficulty difficulty)
-    {
-        _difficulty = difficulty;
-    }
+    protected abstract List<Chip> GetPossibleMoves(int diceResult);
 
     private IEnumerator RollDice()
     {
@@ -52,15 +47,17 @@ public class ComputerPlayer : Player
 
     IEnumerator FinishMove(int diceResult)
     {
-        List<Chip> chips = Setup.ShowPossibleMoves(diceResult);
+        Setup.ShowPossibleMoves(diceResult);
 
         yield return new WaitForSeconds(1f);
 
-        HardMove(diceResult, chips);
+        List<Chip> possibleMoves = GetPossibleMoves(diceResult);
+        Move(diceResult, possibleMoves);
+
         yield return new WaitForSeconds(1f);
     }
 
-    private void EasyMove(int diceResult, List<Chip> chips)
+    protected void Move(int diceResult, List<Chip> chips)
     {
         for (int i = 0; i < chips.Count; i++)
         {
@@ -78,25 +75,7 @@ public class ComputerPlayer : Player
         }
     }
 
-    private void HardMove(int diceResult, List<Chip> chips)
-    {
-        for (int i = chips.Count - 1; i >= 0; i--)
-        {
-            if (chips[i].GetValue() == diceResult)
-            {
-                chips[i].Select();
-                break;
-            }
-            else if (chips[i].HasMatch(chips.ToArray(), diceResult))
-            {
-                chips[i].Select();
-                GetMatch(chips[i], chips, diceResult).Select();
-                break;
-            }
-        }
-    }
-
-    public Chip GetMatch(Chip chipToCompare, List<Chip> chips, int total)
+    private Chip GetMatch(Chip chipToCompare, List<Chip> chips, int total)
     {
         foreach (var chip in chips)
         {
@@ -105,11 +84,4 @@ public class ComputerPlayer : Player
         }
         return null;
     }
-}
-
-public enum Difficulty
-{
-    Easy,
-    Normal,
-    Hard
 }

@@ -18,15 +18,24 @@ public static class GameHelper
         {
             Player player = _allPlayerSetups[0].AddComponent<HumanPlayer>();
             _players.Add(player);
-            ComputerPlayer player2 = _allPlayerSetups[2].AddComponent<ComputerPlayer>();
-            player2.SetDifficulty(Difficulty.Easy);
+            ComputerPlayer player2 = _allPlayerSetups[2].AddComponent<ComputerEasy>();
             _players.Add(player2);
-            ComputerPlayer player3 = _allPlayerSetups[4].AddComponent<ComputerPlayer>();
-            player3.SetDifficulty(Difficulty.Hard);
+            ComputerPlayer player3 = _allPlayerSetups[4].AddComponent<ComputerEasy>();
             _players.Add(player3);
         }
         else if ( number == 4)
         {
+            ComputerPlayer player1 = _allPlayerSetups[0].AddComponent<ComputerEasy>();
+            _players.Add(player1);
+
+            ComputerPlayer player2 = _allPlayerSetups[1].AddComponent<ComputerNormal>();
+            _players.Add(player2);
+
+            ComputerPlayer player3 = _allPlayerSetups[3].AddComponent<ComputerHard>();
+            _players.Add(player3);
+
+            ComputerPlayer player4 = _allPlayerSetups[4].AddComponent<ComputerHard>();
+            _players.Add(player4);
             //_players.Add(_allPlayerSetups[0]);
             //_players.Add(_allPlayerSetups[1]);
             //_players.Add(_allPlayerSetups[3]);
