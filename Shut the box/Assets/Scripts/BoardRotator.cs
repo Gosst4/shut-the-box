@@ -23,19 +23,21 @@ public class BoardRotator : MonoBehaviour
     public void RotateTo(Vector3 eulerAngles, float rotateAfter)
     {
         if (IsRotating) return;
-        StartCoroutine(WaitForRotation(eulerAngles, rotateAfter));
+        StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
+
+        Debug.Log("Rotation finished");
     }
 
-    IEnumerator WaitForRotation(Vector3 eulerAngles, float rotateAfter)
+    public void SetBoardPosition(Vector3 eulerAngles)
     {
-        Coroutine c = StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
-        yield return c;
+        if (IsRotating) return;
+        transform.rotation = Quaternion.Euler(eulerAngles * (-1));
     }
 
     IEnumerator RotateToCoroutine(Vector3 eulerAngles, float rotateAfter)
     {
-        IsRotating = true;
         DiceManager.Instance.CanRollDice(false);
+        IsRotating = true;
         yield return new WaitForSeconds(rotateAfter);
         
         float timeElapsed = 0;
@@ -50,7 +52,7 @@ public class BoardRotator : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        IsRotating = false;
         DiceManager.Instance.CanRollDice(true);
+        IsRotating = false;
     }
 }
