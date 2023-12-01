@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class PlayerSelectionScreen : MonoBehaviour
 {
-    //[SerializeField] 
+    [SerializeField] PlayerSelectionItem playerItemPrefab;
+    [SerializeField] SelectionButtons[] selectionButtons;
 
     public event Action<int> OnPlayersNumberSelected;
     public void SetNumberOfPlayers(int numberOfPlayers)

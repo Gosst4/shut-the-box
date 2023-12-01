@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 194672395353316802}
+  - component: {fileID: 7095822392954970734}
   m_Layer: 5
   m_Name: SelectionButtons
   m_TagString: Untagged
@@ -38,6 +39,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -679}
   m_SizeDelta: {x: 1180, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7095822392954970734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651556445470667171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375bbe1fa0dfaa8418b20d5cc61207d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerItemPrefab: {fileID: 6959951937853190531, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
 --- !u!1001 &1215229170200548280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +142,34 @@ PrefabInstance:
     - target: {fileID: 1124788268562953531, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7095822392954970734}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddHumanPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SelectionButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9020393341784745751, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_Name
@@ -230,6 +272,34 @@ PrefabInstance:
     - target: {fileID: 1124788268562953531, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7095822392954970734}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddHumanPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SelectionButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704188513911002164, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9020393341784745751, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_Name
