@@ -1,65 +1,63 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
 public static class GameHelper
 {
-    public static Player[] GetPlayers(int number, PlayerSetup[] _allPlayerSetups)
+    public static Player[] GetPlayers(List<PlayerData> datas, PlayerSetup[] _allPlayerSetups)
     {
         List<Player> _players = new List<Player>();
+        int number = datas.Count;
 
         if (number == 2)
         {
-            Player player = _allPlayerSetups[0].AddComponent<HumanPlayer>();
-            _players.Add(player);
-            Player player2 = _allPlayerSetups[3].AddComponent<HumanPlayer>();
-            _players.Add(player2);
+            _players.Add(CreatePlayer(datas[0], _allPlayerSetups[0]));
+            _players.Add(CreatePlayer(datas[1], _allPlayerSetups[3]));
         }
         else if (number == 3) 
         {
-            Player player = _allPlayerSetups[0].AddComponent<HumanPlayer>();
-            _players.Add(player);
-            ComputerPlayer player2 = _allPlayerSetups[2].AddComponent<ComputerEasy>();
-            _players.Add(player2);
-            ComputerPlayer player3 = _allPlayerSetups[4].AddComponent<ComputerEasy>();
-            _players.Add(player3);
+            _players.Add(CreatePlayer(datas[0], _allPlayerSetups[0]));
+            _players.Add(CreatePlayer(datas[1], _allPlayerSetups[2]));
+            _players.Add(CreatePlayer(datas[2], _allPlayerSetups[4]));
         }
         else if ( number == 4)
         {
-            ComputerPlayer player1 = _allPlayerSetups[0].AddComponent<ComputerEasy>();
-            _players.Add(player1);
-
-            ComputerPlayer player2 = _allPlayerSetups[1].AddComponent<ComputerNormal>();
-            _players.Add(player2);
-
-            ComputerPlayer player3 = _allPlayerSetups[3].AddComponent<ComputerHard>();
-            _players.Add(player3);
-
-            ComputerPlayer player4 = _allPlayerSetups[4].AddComponent<ComputerHard>();
-            _players.Add(player4);
-            //_players.Add(_allPlayerSetups[0]);
-            //_players.Add(_allPlayerSetups[1]);
-            //_players.Add(_allPlayerSetups[3]);
-            //_players.Add(_allPlayerSetups[4]);
+            _players.Add(CreatePlayer(datas[0], _allPlayerSetups[0]));
+            _players.Add(CreatePlayer(datas[1], _allPlayerSetups[1]));
+            _players.Add(CreatePlayer(datas[2], _allPlayerSetups[3]));
+            _players.Add(CreatePlayer(datas[3], _allPlayerSetups[4]));
         }
         else 
         {
             for (int i = 0; i < number; i++)
             {
-                //_players.Add(_allPlayerSetups[i]);
+                _players.Add(CreatePlayer(datas[i], _allPlayerSetups[i]));
             }
         }
 
-        int index = 1;
         foreach (PlayerSetup setup in _allPlayerSetups)
         {
-            if (_players.Contains(setup.GetComponent<Player>())) 
+            if (!_players.Contains(setup.GetComponent<Player>())) 
             {
-                setup.GetComponent<Player>().SetPlayerName($"Player {index}");
-                index++;
+                setup.gameObject.SetActive(false);
             }
-            else setup.gameObject.SetActive(false);
         }
-
         return _players.ToArray();
+    }
+
+    private static Player CreatePlayer(PlayerData playerData, PlayerSetup playerSetup)
+    {
+        PlayerType playerType = playerData._playerType;
+
+        Player player = playerType switch
+        {
+            PlayerType.Human            => playerSetup.AddComponent<HumanPlayer>(),
+            PlayerType.ComputerEasy     => playerSetup.AddComponent<ComputerEasy>(),
+            PlayerType.ComputerNormal   => playerSetup.AddComponent<ComputerNormal>(),
+            PlayerType.ComputerHard     => playerSetup.AddComponent<ComputerHard>()
+        };
+
+        player.SetPlayerName(playerData._name);
+        return player;
     }
 }

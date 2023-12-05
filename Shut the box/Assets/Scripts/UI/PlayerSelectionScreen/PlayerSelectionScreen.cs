@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class PlayerSelectionScreen : MonoBehaviour
 {
-    [SerializeField] PlayerSelectionItem[] items;
-    
-    List<PlayerSelectionItem> selectedItems;
+    [SerializeField] PlayerSelectionItem[] items;    
 
-    public event Action<int> OnPlayersNumberSelected;
-
-    public void SetNumberOfPlayers(int numberOfPlayers)
-    {
-        OnPlayersNumberSelected(numberOfPlayers);
-        gameObject.SetActive(false);
-    }
+    public event Action<List<PlayerData>> OnPlayersNumberSelected;
 
     public void OnStartClick()
     {
+        List<PlayerData> dataList = new List<PlayerData>();
         foreach (var item in items)
         {
-            Debug.Log(item.GetPlayerData()?._playerType);
             PlayerData data = item.GetPlayerData();
+            if (data != null) dataList.Add(data);
         }
+        OnPlayersNumberSelected(dataList);
+        gameObject.SetActive(false);
     }
 }
 

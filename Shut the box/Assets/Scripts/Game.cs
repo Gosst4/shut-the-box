@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -41,9 +42,9 @@ public class Game : MonoBehaviour
         DiceManager.Instance.Reset();
     }
 
-    private void OnPlayersNumberSelected(int number)
+    private void OnPlayersNumberSelected(List<PlayerData> datas)
     {
-        _players = GameHelper.GetPlayers(number, _allPlayerSetups);
+        _players = GameHelper.GetPlayers(datas, _allPlayerSetups);
         _round = new Round(_players);
         _round.OnRoundFinished += Round_OnRoundFinished;
     }
