@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceUISelector : MonoBehaviour
 {
-    DiceManager _diceManager;
+    [SerializeField] Button oneDice;
+    [SerializeField] Button twoDice;
 
-    private void Awake()
-    {
-        _diceManager = DiceManager.Instance;
-    }
     public void SelectNumberOfDices(int number)
     {
-        _diceManager.UpdateNumberOfDice(number);
-    }    
+        DiceManager.Instance.UpdateNumberOfDice(number);
+    }
+
+    public void ShowDiceSelection(bool isSelected)
+    {
+        oneDice.interactable = isSelected;
+        twoDice.interactable = isSelected;       
+    }
 }

@@ -24,8 +24,6 @@ public class BoardRotator : MonoBehaviour
     {
         if (IsRotating) return;
         StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
-
-        Debug.Log("Rotation finished");
     }
 
     public void SetBoardPosition(Vector3 eulerAngles)

@@ -8,7 +8,7 @@ public class DiceManager : MonoBehaviour
 {   
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
-    [SerializeField] GameObject _tintOverDiceSelection;
+    [SerializeField] DiceUISelector diceUISelector;
     [SerializeField] Button _rollButton;
 
     public int AllDiceResult {  get; private set; }
@@ -37,6 +37,7 @@ public class DiceManager : MonoBehaviour
         PregenerateDicePool(startingNumberOfDice);
         InstantiateDices(startingNumberOfDice);
         CanRollDice(true);
+        ShowDiceSelection(false);
     }
 
     private void PregenerateDicePool(int v)
@@ -101,14 +102,14 @@ public class DiceManager : MonoBehaviour
         }
     }
 
-    public void HideDiceSelection(bool isSelected)
+    public void ShowDiceSelection(bool isSelected)
     {
-        _tintOverDiceSelection.SetActive(isSelected);
+        diceUISelector.ShowDiceSelection(isSelected);
     }
 
     public void Reset()
     {
-        HideDiceSelection(true);
+        ShowDiceSelection(false);
         CanRollDice(true);
         UpdateNumberOfDice(2);
     }
@@ -171,7 +172,7 @@ public class DiceManager : MonoBehaviour
 
     public void RestoreState()
     {
-        HideDiceSelection(true);
+        ShowDiceSelection(false);
         UpdateNumberOfDice(2);
     }
 }
