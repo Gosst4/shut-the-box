@@ -7,7 +7,6 @@ public abstract class ComputerPlayer : Player
     private void Awake()
     {
         Setup = GetComponent<PlayerSetup>();
-        PlayerType = PlayerType.Computer;
     }
     public override void UnblockMovement()
     {

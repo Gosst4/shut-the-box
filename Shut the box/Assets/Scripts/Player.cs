@@ -24,4 +24,4 @@ public abstract class Player : MonoBehaviour
     }
 }
 
-public enum PlayerType { Human, Computer}
+public enum PlayerType { Human, ComputerEasy, ComputerNormal, ComputerHard}
