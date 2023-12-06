@@ -59,24 +59,37 @@ public class Game : MonoBehaviour
 
     public void CheckWinners()
     {
-        if (IsGameOver(out int id))
+        if (IsGameOver())
         {
             _gameOverScreen.gameObject.SetActive(true);
-            _gameOverScreen.UpdateWinnersText(_players[id].Name);
+            _gameOverScreen.UpdateWinnersText(GetWinner().Name);
         }
     }
 
-    private bool IsGameOver(out int winnerId)
+    private bool IsGameOver()
     {
         for (int i = 0; i < _players.Length; i++)
         {
             if (_players[i].Score >= _pointsToWin || !_players[i].Setup.HasAnyChips())
             {
-                winnerId = i;
                 return true;
             }
         }
-        winnerId = -1;
         return false;
+    }
+
+    private Player GetWinner()
+    {
+        int winningScore = _players[0].Score;
+        Player winner = _players[0];
+        foreach (var player in _players)
+        {
+            if (player.Score < winningScore)
+            {
+                winningScore = player.Score;
+                winner = player;
+            }
+        }
+        return winner;
     }
 }

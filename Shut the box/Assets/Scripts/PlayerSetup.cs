@@ -30,8 +30,6 @@ public class PlayerSetup : MonoBehaviour
                     DiceManager.Instance.CanRollDice(true);
 
                     if (!HasMoreThanSix()) DiceManager.Instance.AllowDiceSelection(true);
-
-                    Game.Instance.CheckWinners();
                 }
                 else
                 {
@@ -117,7 +115,6 @@ public class PlayerSetup : MonoBehaviour
         {
             if (chip.IsActive) return true;
         }
-        Debug.Log("There is a winner!");
         return false;
     }
     

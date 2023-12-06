@@ -22,6 +22,7 @@ public class Round
     {
         if (_currentId == _players.Length - 1)
         {
+            Game.Instance.CheckWinners();
             BoardRotator.Instance.RotateTo(_players[0].Setup.TargetEulerAngles, 1f);
             DiceManager.Instance.OnAllRollsFinished -= DiceManager_OnAllRollsFinished;
             OnRoundFinished(_players);                        
@@ -36,8 +37,7 @@ public class Round
 
     private void DiceManager_OnAllRollsFinished(int _result)
     {
-        bool hasMoreMoves = _players[_currentId].TryTakeTurn(_result);
-        Game.Instance.CheckWinners();
+        bool hasMoreMoves = _players[_currentId].TryTakeTurn(_result);        
 
         if (!hasMoreMoves) NextPlayer();
 
