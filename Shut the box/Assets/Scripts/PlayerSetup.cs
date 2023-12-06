@@ -29,7 +29,7 @@ public class PlayerSetup : MonoBehaviour
                     StartCoroutine(chip.Fall());
                     DiceManager.Instance.CanRollDice(true);
 
-                    if (!HasMoreThanSix()) DiceManager.Instance.ShowDiceSelection(true);
+                    if (!HasMoreThanSix()) DiceManager.Instance.AllowDiceSelection(true);
 
                     Game.Instance.CheckWinners();
                 }

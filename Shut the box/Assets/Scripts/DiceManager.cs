@@ -8,8 +8,7 @@ public class DiceManager : MonoBehaviour
 {   
     [SerializeField] Dice dicePrefab;
     [SerializeField] DiceNumberDisplay numberDisplay;
-    [SerializeField] DiceUISelector diceUISelector;
-    [SerializeField] Button _rollButton;
+    [SerializeField] Hud hud;
 
     public int AllDiceResult {  get; private set; }
 
@@ -37,7 +36,7 @@ public class DiceManager : MonoBehaviour
         PregenerateDicePool(startingNumberOfDice);
         InstantiateDices(startingNumberOfDice);
         CanRollDice(true);
-        ShowDiceSelection(false);
+        AllowDiceSelection(false);
     }
 
     private void PregenerateDicePool(int v)
@@ -60,13 +59,14 @@ public class DiceManager : MonoBehaviour
         if (!Dice._isRolling)
         {
             CanRollDice(false);
+            AllowDiceSelection(false);
             StartCoroutine(RollAllDice());
         }
     }
 
     public void CanRollDice(bool isAllowed)
     {
-        _rollButton.interactable = isAllowed;
+        hud.CanRollDice(isAllowed);
     }
 
     public void UpdateNumberOfDice(int number)
@@ -102,14 +102,14 @@ public class DiceManager : MonoBehaviour
         }
     }
 
-    public void ShowDiceSelection(bool isSelected)
+    public void AllowDiceSelection(bool canChange)
     {
-        diceUISelector.ShowDiceSelection(isSelected);
+        hud.AllowDiceSelection(canChange);
     }
 
     public void Reset()
     {
-        ShowDiceSelection(false);
+        AllowDiceSelection(false);
         CanRollDice(true);
         UpdateNumberOfDice(2);
     }
@@ -172,7 +172,7 @@ public class DiceManager : MonoBehaviour
 
     public void RestoreState()
     {
-        ShowDiceSelection(false);
+        AllowDiceSelection(false);
         UpdateNumberOfDice(2);
     }
 }
