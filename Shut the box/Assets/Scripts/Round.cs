@@ -3,7 +3,7 @@ using System;
 public class Round 
 {
     int _currentId = 0;
-    public Player[] _players;
+    Player[] _players;
 
     public event Action<Player[]> OnRoundFinished;
 
@@ -33,6 +33,10 @@ public class Round
             BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);            
             _players[_currentId].UnblockMovement();
         }
+
+        if (_players[_currentId].PlayerType == PlayerType.Human)
+            DiceManager.Instance.ShowRollButton(true);
+        else DiceManager.Instance.ShowRollButton(false);
     }
 
     private void DiceManager_OnAllRollsFinished(int _result)
@@ -40,6 +44,5 @@ public class Round
         bool hasMoreMoves = _players[_currentId].TryTakeTurn(_result);        
 
         if (!hasMoreMoves) NextPlayer();
-
     }
 }

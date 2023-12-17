@@ -26,6 +26,8 @@ public class PlayerSelectionItem : MonoBehaviour
     PlayerType _playerType;
     bool isSelected = false;
 
+    const int DefaultDiffIndex = 2;
+
     private void Start()
     {
         removeButton.gameObject.SetActive(!isDefault);
@@ -54,7 +56,7 @@ public class PlayerSelectionItem : MonoBehaviour
         toggleGroup.gameObject.SetActive(true);
         _name = "A.I. " + index;
         _playerName.text = _name;
-        toggleGroup.transform.GetChild(2).GetComponent<Toggle>().isOn = true;
+        toggleGroup.transform.GetChild(DefaultDiffIndex).GetComponent<Toggle>().isOn = true;
         buttonContainer.SetActive(false);
         isSelected = true;
     }

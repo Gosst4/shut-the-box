@@ -7,6 +7,7 @@ public class ComputerEasy : ComputerPlayer
     private void Start()
     {
         chips = Setup.Chips;
+        PlayerType = PlayerType.ComputerEasy;
     }
 
     protected override List<Chip> GetPossibleMoves(int diceResult)

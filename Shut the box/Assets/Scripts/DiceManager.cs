@@ -69,6 +69,12 @@ public class DiceManager : MonoBehaviour
         hud.CanRollDice(isAllowed);
     }
 
+    public void ShowRollButton(bool isShown)
+    {
+        hud.ShowRollButton(isShown);
+        CanRollDice(true);
+    }
+
     public void UpdateNumberOfDice(int number)
     {
         int currentNumber = currentDices.Count;
@@ -107,10 +113,10 @@ public class DiceManager : MonoBehaviour
         hud.AllowDiceSelection(canChange);
     }
 
-    public void Reset()
+    public void ResetDice()
     {
         AllowDiceSelection(false);
-        CanRollDice(true);
+        ShowRollButton(true);
         UpdateNumberOfDice(2);
     }
 
@@ -168,11 +174,5 @@ public class DiceManager : MonoBehaviour
     private void Dice_OnRollFinished(int sideValue)
     {
         AllDiceResult += sideValue;
-    }
-
-    public void RestoreState()
-    {
-        AllowDiceSelection(false);
-        UpdateNumberOfDice(2);
     }
 }

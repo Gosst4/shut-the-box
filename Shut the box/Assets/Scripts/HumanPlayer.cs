@@ -23,6 +23,6 @@ public class HumanPlayer : Player
 
     public override void UnblockMovement()
     {
-        DiceManager.Instance.Reset();
+        DiceManager.Instance.ResetDice();
     }
 }

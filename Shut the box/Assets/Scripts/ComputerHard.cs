@@ -3,6 +3,17 @@ using System.Collections.Generic;
 public class ComputerHard : ComputerPlayer
 {
     private Chip[] chips = new Chip[9];
+    private void Start()
+    {
+        PlayerType = PlayerType.ComputerHard;
+
+        int index = 8;
+        for (int i = 0; i < chips.Length; i++)
+        {
+            chips[i] = Setup.Chips[index];
+            index--;
+        }
+    }
 
     protected override List<Chip> GetPossibleMoves(int diceResult)
     {
@@ -21,15 +32,5 @@ public class ComputerHard : ComputerPlayer
             }
         }
         return possibleMoves;
-    }
-
-    private void Start()
-    {
-        int index = 8;
-        for (int i = 0; i < chips.Length; i++)
-        {
-            chips[i] = Setup.Chips[index];
-            index--;
-        }
     }
 }

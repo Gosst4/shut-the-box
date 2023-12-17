@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
         }
         _playerSelectionScreen.gameObject.SetActive(true);
 
-        DiceManager.Instance.Reset();
+        DiceManager.Instance.ResetDice();
     }
 
     private void OnPlayersNumberSelected(List<PlayerData> datas)
@@ -54,7 +54,7 @@ public class Game : MonoBehaviour
         _round.OnRoundFinished -= Round_OnRoundFinished;
         _round = new Round(players);
         _round.OnRoundFinished += Round_OnRoundFinished;
-        DiceManager.Instance.Reset();
+        DiceManager.Instance.ResetDice();
     }
 
     public void CheckWinners()

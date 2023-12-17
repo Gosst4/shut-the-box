@@ -22,4 +22,9 @@ public class Hud : MonoBehaviour
     {
         _rollButton.interactable = isAllowed;
     }
+
+    public void ShowRollButton(bool isShown)
+    {
+        _rollButton.gameObject.SetActive(isShown);
+    }
 }
