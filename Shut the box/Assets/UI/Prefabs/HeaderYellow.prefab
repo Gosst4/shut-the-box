@@ -463,6 +463,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 26b4fe786ec9dbf48ad092bd16e021ab, type: 2}
     - target: {fileID: 9020393341784745751, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_Name
       value: ButtonHome

@@ -69,7 +69,7 @@ MonoBehaviour:
   m_text: Player 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3df9f2b67ecc78644bd03f9a60e55bed, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 33a71b2b7c549ef4f8416c1f3f914b67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_text: 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3df9f2b67ecc78644bd03f9a60e55bed, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 33a71b2b7c549ef4f8416c1f3f914b67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
