@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 1424595386386327700}
   - component: {fileID: 5703902936247428998}
   m_Layer: 5
-  m_Name: Back
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,7 +455,7 @@ Animator:
   m_GameObject: {fileID: 3300404964261611824}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cef4912c285325b40b3aaedd6830658d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f3ed42b60a3ba9444b77ffa74a82631a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
