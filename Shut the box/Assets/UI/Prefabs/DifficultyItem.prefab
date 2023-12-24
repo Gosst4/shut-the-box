@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 3563092222954432648}
   - component: {fileID: 8042451954896944504}
   - component: {fileID: 8129769318105420114}
+  - component: {fileID: 9220507104660803665}
   m_Layer: 5
   m_Name: DifficultyItem
   m_TagString: Untagged
@@ -190,7 +191,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -231,6 +232,26 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+--- !u!95 &9220507104660803665
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425196687584198763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0f024cde1b4ff34b90f9a5fc76b1217, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &9209996514069998699
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,17 +318,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: random
+  m_text: Random
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 33a71b2b7c549ef4f8416c1f3f914b67, type: 2}
+  m_sharedMaterial: {fileID: -2890335623138930466, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282403153
+  m_fontColor: {r: 0.70980394, g: 0.67058825, b: 0.61960787, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

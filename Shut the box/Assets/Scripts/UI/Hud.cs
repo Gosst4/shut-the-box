@@ -7,6 +7,11 @@ public class Hud : MonoBehaviour
     [SerializeField] Button twoDice;
     [SerializeField] Button _rollButton;
 
+    private void Start()
+    {
+        oneDice.GetComponent<Animator>().keepAnimatorStateOnDisable = true;
+        _rollButton.GetComponent<Animator>().keepAnimatorStateOnDisable = true;
+    }
     public void SetNumberOfDices(int number)
     {
         DiceManager.Instance.UpdateNumberOfDice(number);
