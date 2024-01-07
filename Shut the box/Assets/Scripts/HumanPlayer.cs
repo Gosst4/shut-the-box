@@ -24,5 +24,6 @@ public class HumanPlayer : Player
     public override void UnblockMovement()
     {
         DiceManager.Instance.ResetDice();
+        DiceManager.Instance.ShowRollButton(true);
     }
 }

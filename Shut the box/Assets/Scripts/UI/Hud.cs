@@ -5,7 +5,7 @@ public class Hud : MonoBehaviour
 {
     [SerializeField] Button oneDice;
     [SerializeField] Button twoDice;
-    [SerializeField] Button _rollButton;
+    [SerializeField] GameObject _rollButton;
 
     private void Start()
     {
@@ -25,11 +25,11 @@ public class Hud : MonoBehaviour
 
     public void CanRollDice(bool isAllowed)
     {
-        _rollButton.interactable = isAllowed;
+        _rollButton.GetComponent<Button>().interactable = isAllowed;
     }
 
     public void ShowRollButton(bool isShown)
     {
-        _rollButton.gameObject.SetActive(isShown);
+        _rollButton.SetActive(isShown);
     }
 }

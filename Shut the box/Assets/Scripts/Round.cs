@@ -12,6 +12,7 @@ public class Round
         _players = players;        
         DiceManager.Instance.OnAllRollsFinished += DiceManager_OnAllRollsFinished;
         BoardRotator.Instance.SetBoardPosition(_players[_currentId].Setup.TargetEulerAngles);
+        DiceManager.Instance.ShowRollButton(true);
         foreach (var player in _players)
         {
             player.Setup.RestoreSetup();
@@ -33,10 +34,6 @@ public class Round
             BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);            
             _players[_currentId].UnblockMovement();
         }
-
-        if (_players[_currentId].PlayerType == PlayerType.Human)
-            DiceManager.Instance.ShowRollButton(true);
-        else DiceManager.Instance.ShowRollButton(false);
     }
 
     private void DiceManager_OnAllRollsFinished(int _result)

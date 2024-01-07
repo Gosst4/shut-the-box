@@ -116,7 +116,7 @@ public class DiceManager : MonoBehaviour
     public void ResetDice()
     {
         AllowDiceSelection(false);
-        ShowRollButton(true);
+        //ShowRollButton(true);
         UpdateNumberOfDice(2);
     }
 

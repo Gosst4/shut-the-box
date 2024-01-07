@@ -11,6 +11,7 @@ public abstract class ComputerPlayer : Player
     public override void UnblockMovement()
     {
         DiceManager.Instance.ResetDice();
+        DiceManager.Instance.ShowRollButton(false);
         StartCoroutine(RollDice());
     }
 

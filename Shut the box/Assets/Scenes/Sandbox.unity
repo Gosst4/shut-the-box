@@ -723,6 +723,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254565885}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &311976281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3740717287183929473, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
+  m_PrefabInstance: {fileID: 5676626244137056781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &361041353 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5676626243827005380, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
@@ -3046,6 +3051,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1045079963}
+    - target: {fileID: 3186585690802448539, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
+      propertyPath: _rollButton
+      value: 
+      objectReference: {fileID: 311976281}
     - target: {fileID: 5676626243999196609, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3244,7 +3253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192574377576220285, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
