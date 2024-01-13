@@ -900,14 +900,14 @@ MonoBehaviour:
   m_text: Human
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3df9f2b67ecc78644bd03f9a60e55bed, type: 2}
+  m_sharedMaterial: {fileID: -2890335623138930466, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282403153
-  m_fontColor: {r: 0.31764707, g: 0.28627452, b: 0.2509804, a: 1}
+    rgba: 4288588725
+  m_fontColor: {r: 0.70980394, g: 0.67058825, b: 0.61960787, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -924,8 +924,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -56,7 +56,10 @@ public class PlayerSelectionItem : MonoBehaviour
         toggleGroup.gameObject.SetActive(true);
         _name = "A.I. " + index;
         _playerName.text = _name;
-        toggleGroup.transform.GetChild(DefaultDiffIndex).GetComponent<Toggle>().isOn = true;
+        var selectedToggle = toggleGroup.transform.GetChild(DefaultDiffIndex).GetComponent<Toggle>();
+        selectedToggle.isOn = true;
+        selectedToggle.Select();
+
         buttonContainer.SetActive(false);
         isSelected = true;
     }

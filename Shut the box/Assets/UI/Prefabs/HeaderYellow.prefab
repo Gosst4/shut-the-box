@@ -331,15 +331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0.81960785
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0.627451
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0.49019608
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontSizeBase
@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 4291928189
       objectReference: {fileID: 0}
     - target: {fileID: 9020393341784745751, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_Name
@@ -460,12 +460,24 @@ PrefabInstance:
       value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontSizeBase
       value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 4481393004351454411, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282403153
+      value: 4291928189
       objectReference: {fileID: 0}
     - target: {fileID: 9020393341784745751, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_Name
