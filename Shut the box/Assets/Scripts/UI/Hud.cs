@@ -9,7 +9,6 @@ public class Hud : MonoBehaviour
 
     private void Start()
     {
-        oneDice.GetComponent<Animator>().keepAnimatorStateOnDisable = true;
         _rollButton.GetComponent<Animator>().keepAnimatorStateOnDisable = true;
     }
     public void SetNumberOfDices(int number)
