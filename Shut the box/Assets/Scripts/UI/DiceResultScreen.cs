@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceResultDisplay : MonoBehaviour
+public class DiceResultScreen : MonoBehaviour
 {
     [SerializeField] ResultDisplay resultDisplayPrefab;
 
     public void ShowResult(int firstDice, int secondDice) 
     {
         ResultDisplay display = Instantiate(resultDisplayPrefab, transform);
-        display.UpdateText(firstDice + secondDice);
+        display.ShowResult(firstDice, secondDice);
         StartCoroutine(HideCor(display));
     }
 

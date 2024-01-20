@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DiceManager : MonoBehaviour
 {   
     [SerializeField] Dice dicePrefab;
-    //[SerializeField] ResultDisplay numberDisplay;
+    [SerializeField] DiceResultScreen diceResultScreen;
     [SerializeField] Hud hud;
 
     public int AllDiceResult {  get; private set; }
@@ -153,6 +153,7 @@ public class DiceManager : MonoBehaviour
     private IEnumerator RollAllDice()
     {
         AllDiceResult = 0;
+        diceResultScreen.ShowResult(1, 2);
         //numberDisplay.UpdateText(AllDiceResult);
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
 
