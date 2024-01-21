@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public class Round 
 {
@@ -36,9 +37,14 @@ public class Round
         }
     }
 
-    private void DiceManager_OnAllRollsFinished(int _result)
+    private void DiceManager_OnAllRollsFinished(List<int> result)
     {
-        bool hasMoreMoves = _players[_currentId].TryTakeTurn(_result);        
+        int total = 0;
+        foreach (int i in result)
+        {
+            total += i;
+        }
+        bool hasMoreMoves = _players[_currentId].TryTakeTurn(total);        
 
         if (!hasMoreMoves) NextPlayer();
     }

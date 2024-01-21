@@ -19,7 +19,7 @@ public class PlayerSetup : MonoBehaviour
 
     private void Chip_OnChipClicked()
     {
-        if (DiceManager.Instance.AllDiceResult == CalculateSelectedChips())
+        if (DiceManager.Instance.GetAllDiceResult() == CalculateSelectedChips())
         {
             foreach (Chip chip in Chips)
             {

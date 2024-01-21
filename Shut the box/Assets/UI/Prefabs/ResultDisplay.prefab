@@ -338,7 +338,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 8870629733084246460}
-  showResultAnim: {fileID: 0}
+  firstDice: {fileID: 190607137101881720}
+  secondDice: {fileID: 2195436215613661023}
+  dices:
+  - {fileID: 21300000, guid: 7b0f15349c6936b479fd3e373ed3cf2f, type: 3}
+  - {fileID: 21300000, guid: c13e6b20cf4415c46b22d6c0b0191b00, type: 3}
+  - {fileID: 21300000, guid: bd619e2e8ac94744482cee85a8bc048c, type: 3}
+  - {fileID: 21300000, guid: 52be7406365ab034d9ebedbaaa7c5958, type: 3}
+  - {fileID: 21300000, guid: 47a326cf713ca8d488e485e3db95736a, type: 3}
+  - {fileID: 21300000, guid: fcf8e0d7fc4d4a741abd833f055d4218, type: 3}
 --- !u!1 &8870629733084246449
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 11
+  m_text: --
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
   m_sharedMaterial: {fileID: -2890335623138930466, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}

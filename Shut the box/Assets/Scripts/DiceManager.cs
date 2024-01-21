@@ -10,13 +10,13 @@ public class DiceManager : MonoBehaviour
     [SerializeField] DiceResultScreen diceResultScreen;
     [SerializeField] Hud hud;
 
-    public int AllDiceResult {  get; private set; }
+    public List<int> AllDiceResult {  get; private set; } = new List<int>();
 
     int startingNumberOfDice = 2;
     List<Dice> dicePool = new List<Dice>();
     List<Dice> currentDices = new List<Dice>();
    
-    public event Action<int> OnAllRollsFinished;
+    public event Action<List<int>> OnAllRollsFinished;
 
     static DiceManager instance;
     public static DiceManager Instance
@@ -37,6 +37,16 @@ public class DiceManager : MonoBehaviour
         InstantiateDices(startingNumberOfDice);
         CanRollDice(true);
         AllowDiceSelection(false);
+    }
+
+    public int GetAllDiceResult()
+    {
+        int total = 0;
+        foreach (int i in AllDiceResult)
+        {
+            total += i;
+        }
+        return total;
     }
 
     private void PregenerateDicePool(int v)
@@ -152,9 +162,8 @@ public class DiceManager : MonoBehaviour
 
     private IEnumerator RollAllDice()
     {
-        AllDiceResult = 0;
-        diceResultScreen.ShowResult(1, 2);
-        //numberDisplay.UpdateText(AllDiceResult);
+        AllDiceResult.Clear();
+
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
 
         int pos = 5;
@@ -168,12 +177,12 @@ public class DiceManager : MonoBehaviour
         {
             yield return c;
         }
-        //numberDisplay.UpdateText(AllDiceResult);
+        diceResultScreen.ShowResultScreen(AllDiceResult);
         OnAllRollsFinished?.Invoke(AllDiceResult);
     }
 
     private void Dice_OnRollFinished(int sideValue)
     {
-        AllDiceResult += sideValue;
+        AllDiceResult.Add(sideValue);
     }
 }
