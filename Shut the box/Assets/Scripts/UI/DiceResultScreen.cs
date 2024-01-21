@@ -6,13 +6,17 @@ using UnityEngine.UI;
 
 public class DiceResultScreen : MonoBehaviour
 {
-    [SerializeField] ResultDisplay resultDisplayPrefab;
+    [Header("Popup")]
+    [SerializeField] GameObject resultDisplay;    
+    [SerializeField] TextMeshProUGUI textFullScreen;
+    [SerializeField] Image firstDiceBig;
+    [SerializeField] Image secondDiceBig;
+    [SerializeField] Sprite[] diceSprites;
 
     [Header("DiceSelectionGroup")]
     [SerializeField] GameObject diceGroup;
-    [SerializeField] Image firstDie;
-    [SerializeField] Image secondDie;
-    [SerializeField] Sprite[] dice;
+    [SerializeField] Image firstDice;
+    [SerializeField] Image secondDice;
     [SerializeField] TextMeshProUGUI diceNumberText;
     [SerializeField] Button leftArrowBtn;
     [SerializeField] Button rightArrowBtn;
@@ -24,21 +28,28 @@ public class DiceResultScreen : MonoBehaviour
     public void ShowResultScreen(List<int> allDiceResult)
     {
         diceGroup.SetActive(false);
-        ResultDisplay display = Instantiate(resultDisplayPrefab, transform);
+        resultDisplay.SetActive(true);
         if (allDiceResult.Count == 1)
         {
-            display.ShowResult(allDiceResult[0]);
+            textFullScreen.text = allDiceResult[0].ToString();            
+            firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
+            secondDiceBig.gameObject.SetActive(false);
         }
         else if (allDiceResult.Count == 2)
-        {
-            display.ShowResult(allDiceResult[0], allDiceResult[1]);
+        {  
+            int diceResult = allDiceResult[0] + allDiceResult[1];
+            textFullScreen.text = diceResult.ToString();
+
+            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
+            secondDice.sprite = diceSprites[allDiceResult[1] - 1];
         }
-        StartCoroutine(HideCor(display, allDiceResult));        
+        StartCoroutine(HideCor(allDiceResult));        
     }
 
     public void ClearDiceResult()
     {
         diceGroup.SetActive(false);
+        resultDisplay.SetActive(false);
     }
 
     public void AllowDiceSelection(bool canChange)
@@ -47,24 +58,24 @@ public class DiceResultScreen : MonoBehaviour
         rightArrowBtn.interactable = canChange;
     }
 
-    public void SelectOneDie()
+    public void OnSelectOneDiceClick()
     {
         DiceManager.Instance.UpdateNumberOfDice(1);
-        secondDie.gameObject.SetActive(false);
+        secondDice.gameObject.SetActive(false);
         diceNumberText.text = "One Die";
     }
-    public void SelectTwoDices()
+    public void OnSelectTwoDiceClick()
     {
         DiceManager.Instance.UpdateNumberOfDice(2);
-        secondDie.gameObject.SetActive(true);
+        secondDice.gameObject.SetActive(true);
         diceNumberText.text = "Two Dice";
     }
 
-    private IEnumerator HideCor(ResultDisplay display, List<int> allDiceResult)
+    private IEnumerator HideCor(List<int> allDiceResult)
     {
         yield return new WaitForSeconds(2);
         UpdateDiceSelectionGroup(allDiceResult);
-        Destroy(display.gameObject);
+        resultDisplay.SetActive(false);
     }
 
     private void UpdateDiceSelectionGroup(List<int> allDiceResult)
@@ -73,14 +84,12 @@ public class DiceResultScreen : MonoBehaviour
 
         if (allDiceResult.Count == 1)
         {
-            firstDie.sprite = dice[allDiceResult[0] - 1];
-            //secondDice.gameObject.SetActive(false);               // !
+            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
         }
         else if (allDiceResult.Count == 2)
         {
-            firstDie.sprite = dice[allDiceResult[0] - 1];
-            //secondDice.gameObject.SetActive(true);               // !
-            secondDie.sprite = dice[allDiceResult[1] - 1];
+            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
+            secondDice.sprite = diceSprites[allDiceResult[1] - 1];
         }
     }
 }
