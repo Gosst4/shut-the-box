@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +10,10 @@ public class DiceResultScreen : MonoBehaviour
 
     [Header("DiceSelectionGroup")]
     [SerializeField] GameObject diceGroup;
-    [SerializeField] Image firstDice;
-    [SerializeField] Image secondDice;
-    [SerializeField] Sprite[] dices;
+    [SerializeField] Image firstDie;
+    [SerializeField] Image secondDie;
+    [SerializeField] Sprite[] dice;
+    [SerializeField] TextMeshProUGUI diceNumberText;
     [SerializeField] Button leftArrowBtn;
     [SerializeField] Button rightArrowBtn;
 
@@ -43,12 +44,20 @@ public class DiceResultScreen : MonoBehaviour
     public void AllowDiceSelection(bool canChange)
     {
         leftArrowBtn.interactable = canChange;
-        leftArrowBtn.interactable = canChange;
+        rightArrowBtn.interactable = canChange;
     }
 
-    public void SetNumberOfDices(int number)
+    public void SelectOneDie()
     {
-        DiceManager.Instance.UpdateNumberOfDice(number);
+        DiceManager.Instance.UpdateNumberOfDice(1);
+        secondDie.gameObject.SetActive(false);
+        diceNumberText.text = "One Die";
+    }
+    public void SelectTwoDices()
+    {
+        DiceManager.Instance.UpdateNumberOfDice(2);
+        secondDie.gameObject.SetActive(true);
+        diceNumberText.text = "Two Dice";
     }
 
     private IEnumerator HideCor(ResultDisplay display, List<int> allDiceResult)
@@ -64,14 +73,14 @@ public class DiceResultScreen : MonoBehaviour
 
         if (allDiceResult.Count == 1)
         {
-            firstDice.sprite = dices[allDiceResult[0] - 1];
-            secondDice.gameObject.SetActive(false);
+            firstDie.sprite = dice[allDiceResult[0] - 1];
+            //secondDice.gameObject.SetActive(false);               // !
         }
         else if (allDiceResult.Count == 2)
         {
-            firstDice.sprite = dices[allDiceResult[0] - 1];
-            secondDice.gameObject.SetActive(true);
-            secondDice.sprite = dices[allDiceResult[1] - 1];
+            firstDie.sprite = dice[allDiceResult[0] - 1];
+            //secondDice.gameObject.SetActive(true);               // !
+            secondDie.sprite = dice[allDiceResult[1] - 1];
         }
     }
 }

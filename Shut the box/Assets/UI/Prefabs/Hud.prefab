@@ -1011,15 +1011,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultDisplayPrefab: {fileID: 4672966582667554422, guid: f2cea15dbe202e0419920d53bfc6b777, type: 3}
   diceGroup: {fileID: 7391100154581237730}
-  firstDice: {fileID: 4275651002905772834}
-  secondDice: {fileID: 6005258665396209191}
-  dices:
+  firstDie: {fileID: 4275651002905772834}
+  secondDie: {fileID: 6005258665396209191}
+  dice:
   - {fileID: 21300000, guid: 7b0f15349c6936b479fd3e373ed3cf2f, type: 3}
   - {fileID: 21300000, guid: c13e6b20cf4415c46b22d6c0b0191b00, type: 3}
   - {fileID: 21300000, guid: bd619e2e8ac94744482cee85a8bc048c, type: 3}
   - {fileID: 21300000, guid: 52be7406365ab034d9ebedbaaa7c5958, type: 3}
   - {fileID: 21300000, guid: 47a326cf713ca8d488e485e3db95736a, type: 3}
   - {fileID: 21300000, guid: fcf8e0d7fc4d4a741abd833f055d4218, type: 3}
+  diceNumberText: {fileID: 2234357228006525188}
   leftArrowBtn: {fileID: 4692656011566946853}
   rightArrowBtn: {fileID: 8782189345472006067}
 --- !u!1 &6331073449203728980
@@ -1193,8 +1194,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6907043541895670947}
         m_TargetAssemblyTypeName: DiceResultScreen, Assembly-CSharp
-        m_MethodName: SetNumberOfDices
-        m_Mode: 3
+        m_MethodName: SelectTwoDices
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1616,8 +1617,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6907043541895670947}
         m_TargetAssemblyTypeName: DiceResultScreen, Assembly-CSharp
-        m_MethodName: SetNumberOfDices
-        m_Mode: 3
+        m_MethodName: SelectOneDie
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
