@@ -120,7 +120,7 @@ public class DiceManager : MonoBehaviour
 
     public void AllowDiceSelection(bool canChange)
     {
-        hud.AllowDiceSelection(canChange);
+        diceResultScreen.AllowDiceSelection(canChange);
     }
 
     public void ResetDice()
@@ -163,6 +163,7 @@ public class DiceManager : MonoBehaviour
     private IEnumerator RollAllDice()
     {
         AllDiceResult.Clear();
+        diceResultScreen.ClearDiceResult();
 
         Coroutine[] coroutines = new Coroutine[currentDices.Count];
 
