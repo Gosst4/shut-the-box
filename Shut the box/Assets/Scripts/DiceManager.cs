@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DiceManager : MonoBehaviour
 {   
@@ -11,11 +10,11 @@ public class DiceManager : MonoBehaviour
     [SerializeField] Hud hud;
 
     public List<int> AllDiceResult {  get; private set; } = new List<int>();
+    public List<Dice> CurrentDice { get; private set; } = new List<Dice>();
 
     int startingNumberOfDice = 2;
     List<Dice> dicePool = new List<Dice>();
-    List<Dice> currentDice = new List<Dice>();
-   
+       
     public event Action<List<int>> OnAllRollsFinished;
 
     static DiceManager instance;
@@ -87,23 +86,23 @@ public class DiceManager : MonoBehaviour
 
     public void UpdateNumberOfDice(int number)
     {
-        int currentNumber = currentDice.Count;
+        int currentNumber = CurrentDice.Count;
         if (currentNumber == number) return;
         if (currentNumber > number)
         {
             List<Dice> toBeRemoved = new List<Dice>();
-            for (int i = 0; i < currentDice.Count; i++)
+            for (int i = CurrentDice.Count - 1; i >= 0; i--)
             {
                 if (i < number) continue;
-                if (currentDice[i].gameObject.activeInHierarchy == true)
+                if (CurrentDice[i].gameObject.activeInHierarchy == true)
                 {
-                     currentDice[i].gameObject.SetActive(false);
-                     toBeRemoved.Add(currentDice[i]);
+                     CurrentDice[i].gameObject.SetActive(false);
+                     toBeRemoved.Add(CurrentDice[i]);
                 }    
             }           
             foreach (var dice in toBeRemoved)
             {
-                currentDice.Remove(dice);
+                CurrentDice.Remove(dice);
             }
         }
         else if (currentNumber < number)
@@ -113,7 +112,7 @@ public class DiceManager : MonoBehaviour
                 if (i < currentNumber) continue;
   
                 Dice dice = RequestDiceFromPool();
-                currentDice.Add(dice);
+                CurrentDice.Add(dice);
             }
         }
     }
@@ -132,11 +131,11 @@ public class DiceManager : MonoBehaviour
 
     private void InstantiateDice(int numberOfDice)
     {
-        currentDice.Clear();
+        CurrentDice.Clear();
         for (int i = 0; i < numberOfDice; i++)
         {
             Dice dice = RequestDiceFromPool();
-            currentDice.Add(dice);
+            CurrentDice.Add(dice);
         }
     }
 
@@ -165,12 +164,12 @@ public class DiceManager : MonoBehaviour
         AllDiceResult.Clear();
         diceResultScreen.ClearDiceResult();
 
-        Coroutine[] coroutines = new Coroutine[currentDice.Count];
+        Coroutine[] coroutines = new Coroutine[CurrentDice.Count];
 
         int pos = 5;
-        for (int i = 0; i < currentDice.Count; i++)
+        for (int i = 0; i < CurrentDice.Count; i++)
         {
-            Coroutine c = StartCoroutine(currentDice[i].RollDice(pos));
+            Coroutine c = StartCoroutine(CurrentDice[i].RollDice(pos));
             coroutines[i] = c;
             // pos += 6;
         }

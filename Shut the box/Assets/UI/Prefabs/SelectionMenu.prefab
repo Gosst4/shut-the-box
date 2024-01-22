@@ -659,6 +659,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4282403153
       objectReference: {fileID: 0}
+    - target: {fileID: 8536880201022313344, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
 --- !u!224 &4566478072069760984 stripped
@@ -887,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1124788268562953531, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1124788268562953531, guid: eed14244b5fe5fb4bbac10673d0dba23, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

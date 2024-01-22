@@ -60,15 +60,19 @@ public class DiceResultScreen : MonoBehaviour
 
     public void OnSelectOneDiceClick()
     {
-        DiceManager.Instance.UpdateNumberOfDice(1);
-        secondDice.gameObject.SetActive(false);
-        diceNumberText.text = "One Die";
-    }
-    public void OnSelectTwoDiceClick()
-    {
-        DiceManager.Instance.UpdateNumberOfDice(2);
-        secondDice.gameObject.SetActive(true);
-        diceNumberText.text = "Two Dice";
+        DiceManager diceManager = DiceManager.Instance;
+        if (diceManager.CurrentDice.Count == 2)
+        {
+            diceManager.UpdateNumberOfDice(1);
+            secondDice.gameObject.SetActive(false);
+            diceNumberText.text = "One Dice";
+        }
+        else
+        {
+            diceManager.UpdateNumberOfDice(2);
+            secondDice.gameObject.SetActive(true);
+            diceNumberText.text = "Two Dice";
+        }
     }
 
     private IEnumerator HideCor(List<int> allDiceResult)
