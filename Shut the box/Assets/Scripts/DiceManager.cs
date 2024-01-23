@@ -100,8 +100,8 @@ public class DiceManager : MonoBehaviour
     public void ResetDice()
     {
         AllowDiceSelection(false);
-        //ShowRollButton(true);
         UpdateNumberOfDice(2);
+        diceResultScreen.ClearDiceResult();
     }
     private void UpdateNumberOfDice(int number)
     {

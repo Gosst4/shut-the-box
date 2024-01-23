@@ -22,14 +22,20 @@ public class DiceResultScreen : MonoBehaviour
     [SerializeField] Button leftArrowBtn;
     [SerializeField] Button rightArrowBtn;
 
+    List<int> _allDiceResult = new List<int>();
+    bool _animationOn = false;
+
     private void Start()
     {
         ClearDiceResult();
     }
     public void ShowResultScreen(List<int> allDiceResult)
     {
+        _animationOn = true;
+        _allDiceResult = allDiceResult;
         diceGroup.SetActive(false);
         resultDisplay.SetActive(true);
+
         if (allDiceResult.Count == 1)
         {
             textFullScreen.text = allDiceResult[0].ToString();            
@@ -44,8 +50,8 @@ public class DiceResultScreen : MonoBehaviour
             firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
             secondDiceBig.sprite = diceSprites[allDiceResult[1] - 1];
         }
-        resultDisplay.GetComponent<Animator>().SetTrigger("FadeOutDiceResult");
-        StartCoroutine(HideCor(allDiceResult));        
+        GetComponent<Animator>().SetTrigger("FadeOutDiceResult");
+        //StartCoroutine(HideCor(allDiceResult));        
     }
 
     public void ClearDiceResult()
@@ -74,25 +80,26 @@ public class DiceResultScreen : MonoBehaviour
         }
     }   
 
-    private IEnumerator HideCor(List<int> allDiceResult)
+    public void OnScreenFaded()
     {
-        yield return new WaitForSeconds(2);
-        UpdateDiceSelectionGroup(allDiceResult);
+        UpdateDiceSelectionGroup();
         resultDisplay.SetActive(false);
     }
 
-    private void UpdateDiceSelectionGroup(List<int> allDiceResult)
+    private void UpdateDiceSelectionGroup()
     {
+        if (Dice._isRolling) return;
+
         diceGroup.SetActive(true);
 
-        if (allDiceResult.Count == 1)
+        if (_allDiceResult.Count == 1)
         {
-            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
+            firstDice.sprite = diceSprites[_allDiceResult[0] - 1];
         }
-        else if (allDiceResult.Count == 2)
+        else if (_allDiceResult.Count == 2)
         {
-            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
-            secondDice.sprite = diceSprites[allDiceResult[1] - 1];
+            firstDice.sprite = diceSprites[_allDiceResult[0] - 1];
+            secondDice.sprite = diceSprites[_allDiceResult[1] - 1];
         }
     }
 }
