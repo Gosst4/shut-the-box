@@ -287,7 +287,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8870629731638756913}
   - component: {fileID: 8870629731638756927}
-  - component: {fileID: 4672966582667554422}
   m_Layer: 5
   m_Name: ResultDisplay
   m_TagString: Untagged
@@ -325,28 +324,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8870629731638756912}
   m_CullTransparentMesh: 1
---- !u!114 &4672966582667554422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870629731638756912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75402a58372736547acd97723d675a80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 8870629733084246460}
-  firstDice: {fileID: 190607137101881720}
-  secondDice: {fileID: 2195436215613661023}
-  dices:
-  - {fileID: 21300000, guid: 7b0f15349c6936b479fd3e373ed3cf2f, type: 3}
-  - {fileID: 21300000, guid: c13e6b20cf4415c46b22d6c0b0191b00, type: 3}
-  - {fileID: 21300000, guid: bd619e2e8ac94744482cee85a8bc048c, type: 3}
-  - {fileID: 21300000, guid: 52be7406365ab034d9ebedbaaa7c5958, type: 3}
-  - {fileID: 21300000, guid: 47a326cf713ca8d488e485e3db95736a, type: 3}
-  - {fileID: 21300000, guid: fcf8e0d7fc4d4a741abd833f055d4218, type: 3}
 --- !u!1 &8870629733084246449
 GameObject:
   m_ObjectHideFlags: 0

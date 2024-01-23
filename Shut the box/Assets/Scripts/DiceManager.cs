@@ -83,38 +83,13 @@ public class DiceManager : MonoBehaviour
         hud.ShowRollButton(isShown);
         CanRollDice(true);
     }
-
-    public void UpdateNumberOfDice(int number)
+   
+    public void OnSelectNumberOfDiceClick()
     {
-        int currentNumber = CurrentDice.Count;
-        if (currentNumber == number) return;
-        if (currentNumber > number)
-        {
-            List<Dice> toBeRemoved = new List<Dice>();
-            for (int i = CurrentDice.Count - 1; i >= 0; i--)
-            {
-                if (i < number) continue;
-                if (CurrentDice[i].gameObject.activeInHierarchy == true)
-                {
-                     CurrentDice[i].gameObject.SetActive(false);
-                     toBeRemoved.Add(CurrentDice[i]);
-                }    
-            }           
-            foreach (var dice in toBeRemoved)
-            {
-                CurrentDice.Remove(dice);
-            }
-        }
-        else if (currentNumber < number)
-        {
-            for (int i = 0; i < number; i++)
-            {
-                if (i < currentNumber) continue;
-  
-                Dice dice = RequestDiceFromPool();
-                CurrentDice.Add(dice);
-            }
-        }
+        if (CurrentDice.Count == 2)        
+            UpdateNumberOfDice(1);        
+        else        
+            UpdateNumberOfDice(2);
     }
 
     public void AllowDiceSelection(bool canChange)
@@ -127,6 +102,39 @@ public class DiceManager : MonoBehaviour
         AllowDiceSelection(false);
         //ShowRollButton(true);
         UpdateNumberOfDice(2);
+    }
+    private void UpdateNumberOfDice(int number)
+    {
+        int currentNumber = CurrentDice.Count;
+        if (currentNumber == number) return;
+        if (currentNumber > number)
+        {
+            List<Dice> toBeRemoved = new List<Dice>();
+            for (int i = CurrentDice.Count - 1; i >= 0; i--)
+            {
+                if (i < number) continue;
+                if (CurrentDice[i].gameObject.activeInHierarchy == true)
+                {
+                    CurrentDice[i].gameObject.SetActive(false);
+                    toBeRemoved.Add(CurrentDice[i]);
+                }
+            }
+            foreach (var dice in toBeRemoved)
+            {
+                CurrentDice.Remove(dice);
+            }
+        }
+        else if (currentNumber < number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                if (i < currentNumber) continue;
+
+                Dice dice = RequestDiceFromPool();
+                CurrentDice.Add(dice);
+            }
+        }
+        diceResultScreen.UpdateDiceInfo(number);
     }
 
     private void InstantiateDice(int numberOfDice)
@@ -177,6 +185,7 @@ public class DiceManager : MonoBehaviour
         {
             yield return c;
         }
+
         diceResultScreen.ShowResultScreen(AllDiceResult);
         OnAllRollsFinished?.Invoke(AllDiceResult);
     }

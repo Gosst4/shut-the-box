@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466589827751617862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.81, y: 1, z: -8.18}
+  m_LocalPosition: {x: 0, y: 1, z: -8.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1293,6 +1293,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 3086814508271209215, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2890335623138930466, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
+    - target: {fileID: 4785670402884448188, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2890335623138930466, guid: e720a9c129db1af42a7d117e3c23a23e, type: 2}
     - target: {fileID: 6974192985652070486, guid: b4d946049a3838341a4ad56d6abd1907, type: 3}
       propertyPath: m_Name
       value: ScoreDisplay

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -40,9 +41,9 @@ public class DiceResultScreen : MonoBehaviour
             int diceResult = allDiceResult[0] + allDiceResult[1];
             textFullScreen.text = diceResult.ToString();
 
-            firstDice.sprite = diceSprites[allDiceResult[0] - 1];
-            secondDice.sprite = diceSprites[allDiceResult[1] - 1];
-        }
+            firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
+            secondDiceBig.sprite = diceSprites[allDiceResult[1] - 1];
+;        }
         StartCoroutine(HideCor(allDiceResult));        
     }
 
@@ -58,22 +59,19 @@ public class DiceResultScreen : MonoBehaviour
         rightArrowBtn.interactable = canChange;
     }
 
-    public void OnSelectOneDiceClick()
+    public void UpdateDiceInfo(int diceNumber)
     {
-        DiceManager diceManager = DiceManager.Instance;
-        if (diceManager.CurrentDice.Count == 2)
+        if (diceNumber == 2)
         {
-            diceManager.UpdateNumberOfDice(1);
             secondDice.gameObject.SetActive(false);
             diceNumberText.text = "One Dice";
         }
         else
         {
-            diceManager.UpdateNumberOfDice(2);
             secondDice.gameObject.SetActive(true);
             diceNumberText.text = "Two Dice";
         }
-    }
+    }   
 
     private IEnumerator HideCor(List<int> allDiceResult)
     {

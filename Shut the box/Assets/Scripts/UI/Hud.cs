@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class Hud : MonoBehaviour
 {
     [SerializeField] GameObject _rollButton;
+    [SerializeField] Button _optionsButton;
+    [SerializeField] Button _rulesButton;
 
     private void Start()
     {
