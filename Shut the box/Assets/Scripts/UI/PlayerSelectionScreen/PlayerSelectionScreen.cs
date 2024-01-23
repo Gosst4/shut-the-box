@@ -17,6 +17,8 @@ public class PlayerSelectionScreen : MonoBehaviour
             if (data != null) dataList.Add(data);
         }
         OnPlayersNumberSelected(dataList);
+
+        BoardRotator.Instance.StartRotation();
         gameObject.SetActive(false);
     }
 }

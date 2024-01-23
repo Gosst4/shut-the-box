@@ -20,6 +20,11 @@ public class BoardRotator : MonoBehaviour
         }
     }
 
+    public void StartRotation()
+    {
+        GetComponent<Animator>().SetTrigger("StartRotation");
+    }
+
     public void RotateTo(Vector3 eulerAngles, float rotateAfter)
     {
         if (IsRotating) return;
