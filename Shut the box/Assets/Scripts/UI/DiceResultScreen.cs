@@ -43,7 +43,8 @@ public class DiceResultScreen : MonoBehaviour
 
             firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
             secondDiceBig.sprite = diceSprites[allDiceResult[1] - 1];
-;        }
+        }
+        resultDisplay.GetComponent<Animator>().SetTrigger("FadeOutDiceResult");
         StartCoroutine(HideCor(allDiceResult));        
     }
 
