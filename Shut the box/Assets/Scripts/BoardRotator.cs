@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BoardRotator : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class BoardRotator : MonoBehaviour
         GetComponent<Animator>().SetTrigger("StartRotation");
     }
 
-    public void RotateTo(Vector3 eulerAngles, float rotateAfter)
+    public void RotateTo(Player player, float rotateAfter)
     {
         if (IsRotating) return;
-        StartCoroutine(RotateToCoroutine(eulerAngles, rotateAfter));
+        StartCoroutine(RotateToCoroutine(player, rotateAfter));
     }
 
     public void SetBoardPosition(Vector3 eulerAngles)
@@ -37,7 +38,7 @@ public class BoardRotator : MonoBehaviour
         transform.rotation = Quaternion.Euler(eulerAngles * (-1));
     }
 
-    IEnumerator RotateToCoroutine(Vector3 eulerAngles, float rotateAfter)
+    IEnumerator RotateToCoroutine(Player player, float rotateAfter)
     {
         DiceManager.Instance.CanRollDice(false);
         IsRotating = true;
@@ -46,7 +47,7 @@ public class BoardRotator : MonoBehaviour
         float timeElapsed = 0;
 
         var startPosition = transform.localRotation;
-        var targetPosition = Quaternion.Euler(eulerAngles * (- 1));
+        var targetPosition = Quaternion.Euler(player.Setup.TargetEulerAngles * (- 1));
 
         while (timeElapsed < _rotationDuration)
         {
@@ -55,6 +56,7 @@ public class BoardRotator : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        Hud.Instance.ShowPlayerName(player.Name);
         DiceManager.Instance.CanRollDice(true);
         IsRotating = false;
     }

@@ -68,7 +68,7 @@ public class DiceResultScreen : MonoBehaviour
 
     public void UpdateDiceInfo(int diceNumber)
     {
-        if (diceNumber == 2)
+        if (diceNumber == 1)
         {
             secondDice.gameObject.SetActive(false);
             diceNumberText.text = "One Dice";

@@ -25,16 +25,15 @@ public class Round
         if (_currentId == _players.Length - 1)
         {
             Game.Instance.CheckWinners();
-            BoardRotator.Instance.RotateTo(_players[0].Setup.TargetEulerAngles, 1f);
+            BoardRotator.Instance.RotateTo(_players[0], 1f);
             DiceManager.Instance.OnAllRollsFinished -= DiceManager_OnAllRollsFinished;
             OnRoundFinished(_players);                        
         }
         else
         {
             _currentId++;
-            BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);            
+            BoardRotator.Instance.RotateTo(_players[_currentId], 1f);            
             _players[_currentId].UnblockMovement();
-            Hud.Instance.ShowPlayerName(_players[_currentId].Name);
         }
     }
 

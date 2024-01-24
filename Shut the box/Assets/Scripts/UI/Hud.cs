@@ -40,6 +40,6 @@ public class Hud : MonoBehaviour
     {
         PlayerNameDisplay display = Instantiate(_playerNamePrefab, transform);
         display.SetPlayerName(name);
-        Destroy(display, 2f);
+        Destroy(display.gameObject, 3f);
     }
 }
