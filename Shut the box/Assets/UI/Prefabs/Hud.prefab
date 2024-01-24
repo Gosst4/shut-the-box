@@ -411,6 +411,7 @@ MonoBehaviour:
   _rollButton: {fileID: 3740717287183929473}
   _optionsButton: {fileID: 5724934237455189777}
   _rulesButton: {fileID: 801535518595034626}
+  _playerNamePrefab: {fileID: 709743255118046696, guid: 88e52c01457c8674c8446abe3fc1292b, type: 3}
 --- !u!1 &5682598646960310431
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,20 @@ public class Hud : MonoBehaviour
     [SerializeField] GameObject _rollButton;
     [SerializeField] Button _optionsButton;
     [SerializeField] Button _rulesButton;
+    [SerializeField] PlayerNameDisplay _playerNamePrefab;
+
+    static Hud instance;
+    public static Hud Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Hud>();
+            }
+            return instance;
+        }
+    }
 
     private void Start()
     {
@@ -20,5 +34,12 @@ public class Hud : MonoBehaviour
     public void ShowRollButton(bool isShown)
     {
         _rollButton.SetActive(isShown);
+    }
+
+    public void ShowPlayerName(string name)
+    {
+        PlayerNameDisplay display = Instantiate(_playerNamePrefab, transform);
+        display.SetPlayerName(name);
+        Destroy(display, 2f);
     }
 }

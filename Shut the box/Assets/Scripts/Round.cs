@@ -34,6 +34,7 @@ public class Round
             _currentId++;
             BoardRotator.Instance.RotateTo(_players[_currentId].Setup.TargetEulerAngles, 1f);            
             _players[_currentId].UnblockMovement();
+            Hud.Instance.ShowPlayerName(_players[_currentId].Name);
         }
     }
 
