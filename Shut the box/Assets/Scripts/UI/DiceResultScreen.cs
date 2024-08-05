@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -43,8 +41,9 @@ public class DiceResultScreen : MonoBehaviour
             secondDiceBig.gameObject.SetActive(false);
         }
         else if (allDiceResult.Count == 2)
-        {  
-            int diceResult = allDiceResult[0] + allDiceResult[1];
+        {
+			secondDiceBig.gameObject.SetActive(true);
+			int diceResult = allDiceResult[0] + allDiceResult[1];
             textFullScreen.text = diceResult.ToString();
 
             firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
