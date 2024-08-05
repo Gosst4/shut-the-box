@@ -17,8 +17,9 @@ public class PlayerSelectionItem : MonoBehaviour
 
     [Header("Computer Player")]
     [SerializeField] ToggleGroup toggleGroup;
+	[SerializeField] bool isDefaultAi;
 
-    [Header("Buttons")]
+	[Header("Buttons")]
     [SerializeField] GameObject buttonContainer;
     [SerializeField] Button removeButton;
 
@@ -34,6 +35,7 @@ public class PlayerSelectionItem : MonoBehaviour
         playerItemContainer.SetActive(false);
 
         if (isDefault) AddHumanPlayer();
+        if (isDefaultAi) AddComputerPlayer();
     }
 
     public void AddHumanPlayer()
