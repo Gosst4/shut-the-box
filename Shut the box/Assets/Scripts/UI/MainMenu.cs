@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -10,5 +9,20 @@ public class MainMenu : MonoBehaviour
     public void OnPlayClick()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnOptionsClick()
+    {
+
+    }
+
+    public void OnRulesClick()
+    {
+
+    }
+
+    public void OnExitClick()
+    {
+        Application.Quit();
     }
 }

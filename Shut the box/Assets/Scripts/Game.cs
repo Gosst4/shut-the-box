@@ -8,7 +8,7 @@ public class Game : MonoBehaviour
     [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
     Round _round;
-    int _pointsToWin;
+    const int _pointsToWin = 45;
     Player[] _players;
 
     static Game instance;
@@ -27,7 +27,6 @@ public class Game : MonoBehaviour
     private void Start()
     {
         _playerSelectionScreen.OnPlayersNumberSelected += OnPlayersNumberSelected;
-        _pointsToWin = 45;
     }
 
     public void Restart()
