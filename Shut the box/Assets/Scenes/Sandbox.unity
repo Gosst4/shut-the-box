@@ -1280,6 +1280,8 @@ MonoBehaviour:
   - {fileID: 538863887}
   - {fileID: 1985796642}
   _gameOverScreen: {fileID: 1572743523}
+  _diceResultScreen: {fileID: 279176037}
+  _hudScreen: {fileID: 5676626244137056782}
 --- !u!1 &599150921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,7 +2289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1203054768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3589,6 +3591,10 @@ PrefabInstance:
     - target: {fileID: 7192574377576220285, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
       propertyPath: m_Name
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192574377576220285, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

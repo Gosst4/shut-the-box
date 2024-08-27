@@ -5,13 +5,15 @@ public class Game : MonoBehaviour
 {
     [SerializeField] PlayerSetup[] _allPlayerSetups;
     [SerializeField] GameOverScreen _gameOverScreen;
+    [SerializeField] DiceResultScreen _diceResultScreen;
+    [SerializeField] Hud _hudScreen;
     //[SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
     Round _round;
     const int _pointsToWin = 45;
     Player[] _players;
 
-    static Game instance;
+	static Game instance;
     public static Game Instance
     {
         get
@@ -24,7 +26,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    public void Restart()
+	public void Restart()
     {
         foreach (var setup in _allPlayerSetups)
         {
@@ -42,7 +44,10 @@ public class Game : MonoBehaviour
         _players = GameHelper.GetPlayers(datas, _allPlayerSetups);
         _round = new Round(_players);
         _round.OnRoundFinished += Round_OnRoundFinished;
-    }
+
+        _hudScreen.gameObject.SetActive(true);
+		_diceResultScreen.gameObject.SetActive(true);
+	}
 
     private void Round_OnRoundFinished(Player[] players)
     {
@@ -58,7 +63,10 @@ public class Game : MonoBehaviour
         {
             _gameOverScreen.gameObject.SetActive(true);
             _gameOverScreen.UpdateWinnersText(GetWinner().Name);
-        }
+
+			_hudScreen.gameObject.SetActive(false);
+			_diceResultScreen.gameObject.SetActive(false);
+		}
     }
 
     private bool IsGameOver()

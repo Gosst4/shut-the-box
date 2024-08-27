@@ -24,7 +24,8 @@ public class Hud : MonoBehaviour
     private void Start()
     {
         _rollButton.GetComponent<Animator>().keepAnimatorStateOnDisable = true;
-    }
+		gameObject.SetActive(false);
+	}
 
     public void CanRollDice(bool isAllowed)
     {

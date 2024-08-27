@@ -25,7 +25,8 @@ public class DiceResultScreen : MonoBehaviour
 
     private void Start()
     {
-        ClearDiceResult();
+		gameObject.SetActive(false);
+		ClearDiceResult();
     }
     public void ShowResultScreen(List<int> allDiceResult)
     {
