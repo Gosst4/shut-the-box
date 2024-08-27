@@ -21,7 +21,6 @@ public class DiceResultScreen : MonoBehaviour
     [SerializeField] Button rightArrowBtn;
 
     List<int> _allDiceResult = new List<int>();
-    bool _animationOn = false;
 
     private void Start()
     {
@@ -30,7 +29,6 @@ public class DiceResultScreen : MonoBehaviour
     }
     public void ShowResultScreen(List<int> allDiceResult)
     {
-        _animationOn = true;
         _allDiceResult = allDiceResult;
         diceGroup.SetActive(false);
         resultDisplay.SetActive(true);

@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Button _championshipBtn;
     [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
     [SerializeField] OptionsPopup _optionsPopup;
+    [SerializeField] RulesPopup _rulesPopup;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnRulesClick()
     {
-
+		Instantiate(_rulesPopup, transform);
     }
 
     public void OnExitClick()
