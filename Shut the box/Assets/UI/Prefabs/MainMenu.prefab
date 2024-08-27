@@ -94,6 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc8cb7f755fcdf44aff80b090dae2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _championshipBtn: {fileID: 7335061533736400660}
+  _playerSelectionScreen: {fileID: 8324231906308809617, guid: 4cdc42756e3a98d4690668207b7ac175, type: 3}
+  _optionsPopup: {fileID: 2903611957094618323, guid: 5266a60697a3cb54eb5d121491621d0f, type: 3}
 --- !u!1001 &1780467669884338572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,6 +685,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 278688422686447581, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
   m_PrefabInstance: {fileID: 7028595703349809897}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7335061533736400660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 306747353413314045, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+  m_PrefabInstance: {fileID: 7028595703349809897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8003988738809323065
 PrefabInstance:
   m_ObjectHideFlags: 0

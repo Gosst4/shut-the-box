@@ -5,7 +5,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] PlayerSetup[] _allPlayerSetups;
     [SerializeField] GameOverScreen _gameOverScreen;
-    [SerializeField] PlayerSelectionScreen _playerSelectionScreen;
+    //[SerializeField] PlayerSelectionScreen _playerSelectionScreen;
 
     Round _round;
     const int _pointsToWin = 45;
@@ -24,11 +24,6 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        _playerSelectionScreen.OnPlayersNumberSelected += OnPlayersNumberSelected;
-    }
-
     public void Restart()
     {
         foreach (var setup in _allPlayerSetups)
@@ -36,12 +31,13 @@ public class Game : MonoBehaviour
             setup.gameObject.SetActive(true);
             setup.RestoreSetup();
         }
-        _playerSelectionScreen.gameObject.SetActive(true);
+
+        FindObjectOfType<PlayerSelectionScreen>(true).gameObject.SetActive(true);
 
         DiceManager.Instance.ResetDice();
     }
 
-    private void OnPlayersNumberSelected(List<PlayerData> datas)
+    public void OnPlayersNumberSelected(List<PlayerData> datas)
     {
         _players = GameHelper.GetPlayers(datas, _allPlayerSetups);
         _round = new Round(_players);

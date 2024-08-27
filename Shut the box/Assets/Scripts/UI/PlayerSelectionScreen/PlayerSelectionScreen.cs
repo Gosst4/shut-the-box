@@ -8,13 +8,19 @@ public class PlayerSelectionScreen : MonoBehaviour
 
     public event Action<List<PlayerData>> OnPlayersNumberSelected;
 
-    public void OnStartClick()
+	private void Start()
+	{
+        OnPlayersNumberSelected += Game.Instance.OnPlayersNumberSelected;
+	}
+
+	public void OnStartClick()
     {
         List<PlayerData> dataList = new List<PlayerData>();
         foreach (var item in items)
         {
             PlayerData data = item.GetPlayerData();
-            if (data != null) dataList.Add(data);
+            if (data != null) 
+                dataList.Add(data);
         }
         OnPlayersNumberSelected(dataList);
 

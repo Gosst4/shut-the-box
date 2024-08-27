@@ -54,8 +54,9 @@ public static class GameHelper
             PlayerType.Human            => playerSetup.AddComponent<HumanPlayer>(),
             PlayerType.ComputerEasy     => playerSetup.AddComponent<ComputerEasy>(),
             PlayerType.ComputerNormal   => playerSetup.AddComponent<ComputerNormal>(),
-            PlayerType.ComputerHard     => playerSetup.AddComponent<ComputerHard>()
-        };
+            PlayerType.ComputerHard     => playerSetup.AddComponent<ComputerHard>(),
+			_                           => playerSetup.AddComponent<HumanPlayer>()
+		};
 
         player.SetPlayerName(playerData._name);
         return player;

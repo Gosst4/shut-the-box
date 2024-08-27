@@ -12,8 +12,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void OnStartAgainClick()
     {
-        gameObject.SetActive(false);
         FindObjectOfType<Game>().Restart();
+        gameObject.SetActive(false);
     }
 
     public void UpdateWinnersText(string playerName)
