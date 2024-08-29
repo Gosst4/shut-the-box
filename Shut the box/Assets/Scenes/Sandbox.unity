@@ -519,10 +519,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 87919610769137086, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 87919610769137086, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
@@ -598,10 +594,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceResultScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 597219065535404499, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 604302185560417801, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -622,18 +614,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1045079963}
-    - target: {fileID: 2008331980335534827, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSelectNumberOfDiceClick
-      objectReference: {fileID: 0}
     - target: {fileID: 2531080310266531709, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1045079963}
-    - target: {fileID: 2531080310266531709, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSelectNumberOfDiceClick
-      objectReference: {fileID: 0}
     - target: {fileID: 2537362759416804959, guid: c2824006baa21594891a3e0c2d50fb43, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3199,10 +3183,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 657801256939655917, guid: 4522a611db3697c49acbdc34cc4c89dd, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 657801256939655917, guid: 4522a611db3697c49acbdc34cc4c89dd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
@@ -3277,10 +3257,6 @@ PrefabInstance:
     - target: {fileID: 657801256939655918, guid: 4522a611db3697c49acbdc34cc4c89dd, type: 3}
       propertyPath: m_Name
       value: GameOverScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 657801256939655918, guid: 4522a611db3697c49acbdc34cc4c89dd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3409,10 +3385,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5676626243999196609, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676626243999196609, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
@@ -3487,18 +3459,6 @@ PrefabInstance:
     - target: {fileID: 5676626243999196614, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
       propertyPath: m_Name
       value: Hud
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3608,14 +3568,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 7192574377576220285, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192574377576220287, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
-      propertyPath: _rulesPopup
-      value: 
-      objectReference: {fileID: 154658918160860155, guid: c34dfbe9e7de2fe4bbc0e64bede7508d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

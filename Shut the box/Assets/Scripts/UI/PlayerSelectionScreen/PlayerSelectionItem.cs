@@ -26,15 +26,17 @@ public class PlayerSelectionItem : MonoBehaviour
     string _name;
     PlayerType _playerType;
     bool isSelected = false;
+	PlayerSelectionScreen _playerSelectionScreen;
 
-    const int DefaultDiffIndex = 2;
+	const int DefaultDiffIndex = 2;
 
     private void Start()
     {
         removeButton.gameObject.SetActive(!isDefault);
         playerItemContainer.SetActive(false);
+        _playerSelectionScreen = FindObjectOfType<PlayerSelectionScreen>();
 
-        if (isDefault) AddHumanPlayer();
+		if (isDefault) AddHumanPlayer();
         if (isDefaultAi) AddComputerPlayer();
     }
 
@@ -49,7 +51,9 @@ public class PlayerSelectionItem : MonoBehaviour
         buttonContainer.SetActive(false);
         _playerType = PlayerType.Human;
         isSelected = true;
-    }
+
+		_playerSelectionScreen.CheckStartButton();
+	}
 
     public void AddComputerPlayer()
     {
@@ -64,6 +68,8 @@ public class PlayerSelectionItem : MonoBehaviour
 
         buttonContainer.SetActive(false);
         isSelected = true;
+
+		_playerSelectionScreen.CheckStartButton();
     }
 
     public void OnRandomClick(bool difficulty)
@@ -92,7 +98,8 @@ public class PlayerSelectionItem : MonoBehaviour
         buttonContainer.SetActive(true);
         playerItemContainer.SetActive(false);
         isSelected = false;
-    }
+		_playerSelectionScreen.CheckStartButton();
+	}
 
     public PlayerData GetPlayerData()
     {
