@@ -1149,6 +1149,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8324231906308809621}
     m_Modifications:
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8324231906308809617}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHomeClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerSelectionScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 877316893009475943, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8324231906308809617}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHomeClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerSelectionScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557209788689113473, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2872151238334559403, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
       propertyPath: m_Name
       value: HeaderYellow

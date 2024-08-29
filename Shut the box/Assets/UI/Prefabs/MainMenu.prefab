@@ -97,6 +97,7 @@ MonoBehaviour:
   _championshipBtn: {fileID: 7335061533736400660}
   _playerSelectionScreen: {fileID: 8324231906308809617, guid: 4cdc42756e3a98d4690668207b7ac175, type: 3}
   _optionsPopup: {fileID: 2903611957094618323, guid: 5266a60697a3cb54eb5d121491621d0f, type: 3}
+  _rulesPopup: {fileID: 154658918160860155, guid: c34dfbe9e7de2fe4bbc0e64bede7508d, type: 3}
 --- !u!1001 &1780467669884338572
 PrefabInstance:
   m_ObjectHideFlags: 0

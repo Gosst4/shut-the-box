@@ -3488,6 +3488,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hud
       objectReference: {fileID: 0}
+    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724934237455189777, guid: cb344b04780277141b95d244e54fa8c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3600,6 +3612,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7192574377576220287, guid: 77b551b59ed0e434fbf5984ac4860494, type: 3}
+      propertyPath: _rulesPopup
+      value: 
+      objectReference: {fileID: 154658918160860155, guid: c34dfbe9e7de2fe4bbc0e64bede7508d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

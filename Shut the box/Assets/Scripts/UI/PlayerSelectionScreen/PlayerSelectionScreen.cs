@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSelectionScreen : MonoBehaviour
 {
-    [SerializeField] PlayerSelectionItem[] items;    
+	[SerializeField] PlayerSelectionItem[] items;    
 
     public event Action<List<PlayerData>> OnPlayersNumberSelected;
 
@@ -27,5 +27,11 @@ public class PlayerSelectionScreen : MonoBehaviour
         BoardRotator.Instance.StartRotation();
         gameObject.SetActive(false);
     }
+
+	public void OnHomeClick()
+	{
+		FindObjectOfType<MainMenu>(true).gameObject.SetActive(true);
+        gameObject.SetActive(false);
+	}
 }
 
