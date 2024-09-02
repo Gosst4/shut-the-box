@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Localization_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 284652774645760
+    m_Localized: Dos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652774645761
+    m_Localized: Maison
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652783034368
+    m_Localized: "Ferme la bo\xEEte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652783034369
+    m_Localized: Championnat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652783034370
+    m_Localized: Jeu rapide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422976
+    m_Localized: "Possibilit\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422977
+    m_Localized: "R\xE8gles"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422978
+    m_Localized: Sortie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422979
+    m_Localized: Commencer le jeu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422980
+    m_Localized: Nom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422981
+    m_Localized: "Complexit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422982
+    m_Localized: Joueur{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652791422983
+    m_Localized: Humain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652795617280
+    m_Localized: "Al\xE9atoire"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652795617281
+    m_Localized: Facile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652795617282
+    m_Localized: Normale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811584
+    m_Localized: Ajouter un joueur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811585
+    m_Localized: Ajouter l'IA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811586
+    m_Localized: Rouler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811587
+    m_Localized: "Deux d\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811588
+    m_Localized: "Un d\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811589
+    m_Localized: "R\xE9sultat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811590
+    m_Localized: Le gagnant est {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811591
+    m_Localized: Recommencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 292667930206208
+    m_Localized: Dur
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

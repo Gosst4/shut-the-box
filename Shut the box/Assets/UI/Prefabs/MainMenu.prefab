@@ -211,8 +211,67 @@ PrefabInstance:
     - {fileID: 3870986887071584930, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
     - {fileID: 3172798092152719940, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3698494956738293845, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4756810627131670132}
   m_SourcePrefab: {fileID: 100100000, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+--- !u!1 &3163440607371964889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3698494956738293845, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+  m_PrefabInstance: {fileID: 1780467669884338572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4756810627131670132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163440607371964889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:d8aff8b3c2c5db54a81dbdd1081a5dd0
+    m_TableEntryReference:
+      m_KeyId: 284652783034368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6396895890881187847}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &6396895890881187847 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4644102929356624267, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
+  m_PrefabInstance: {fileID: 1780467669884338572}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163440607371964889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8505072242738706021 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7979652643200940009, guid: 786cad2b15f154146800c55a44a442e8, type: 3}
@@ -314,9 +373,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnOptionsClick
       objectReference: {fileID: 0}
+    - target: {fileID: 1279526806968479789, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 284652791422976
+      objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_text
-      value: Options
+      value: Championnat
       objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -428,6 +491,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7192574377576220287}
+    - target: {fileID: 1279526806968479789, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 284652791422978
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+      propertyPath: m_text
+      value: Championnat
+      objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4288588725
@@ -542,9 +613,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPlayClick
       objectReference: {fileID: 0}
+    - target: {fileID: 1279526806968479789, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 284652783034370
+      objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_text
-      value: Quick Play
+      value: Championnat
       objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -666,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_text
-      value: Championship
+      value: Championnat
       objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -793,9 +868,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnRulesClick
       objectReference: {fileID: 0}
+    - target: {fileID: 1279526806968479789, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 284652791422977
+      objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_text
-      value: Rules
+      value: Championnat
       objectReference: {fileID: 0}
     - target: {fileID: 1688478739636248690, guid: 0a407e74579e8b142a2b33df0ee0874a, type: 3}
       propertyPath: m_fontColor32.rgba
