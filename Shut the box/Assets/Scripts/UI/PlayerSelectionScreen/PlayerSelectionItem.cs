@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +10,6 @@ public class PlayerSelectionItem : MonoBehaviour
 
     [Header("Human Player")]
     [SerializeField] GameObject playerDiscription;
-    [SerializeField] string discription;    
-    [SerializeField] TextMeshProUGUI playerDiscriptionText;
     [SerializeField] bool isDefault;
 
     [Header("Computer Player")]
@@ -44,7 +41,6 @@ public class PlayerSelectionItem : MonoBehaviour
     {
         playerItemContainer.SetActive(true);
         playerDiscription.SetActive(true);
-        playerDiscriptionText.text = discription;
         toggleGroup.gameObject.SetActive(false);
         _name = "Player " + index;
         _playerName.text = _name;

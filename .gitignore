@@ -9,7 +9,9 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
-/Google Sheets Service.asset
+
+/Shut the box/Assets/UI/Localization/GoogleSheetsService.asset
+/Shut the box/Assets/UI/Localization/GoogleSheetsService.asset.meta
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

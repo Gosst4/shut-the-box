@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: fr
   m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 6369252110832500739
   m_TableData:
   - m_Id: 284652774645760
     m_Localized: Dos
@@ -105,7 +106,8 @@ MonoBehaviour:
   - m_Id: 284652799811589
     m_Localized: "R\xE9sultat"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252110832500739
   - m_Id: 284652799811590
     m_Localized: Le gagnant est {0}
     m_Metadata:
@@ -120,4 +122,10 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6369252110832500739
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 284652799811589

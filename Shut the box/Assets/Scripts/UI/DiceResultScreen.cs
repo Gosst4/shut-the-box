@@ -52,8 +52,7 @@ public class DiceResultScreen : MonoBehaviour
             firstDiceBig.sprite = diceSprites[allDiceResult[0] - 1];
             secondDiceBig.sprite = diceSprites[allDiceResult[1] - 1];
         }
-        GetComponent<Animator>().SetTrigger("FadeOutDiceResult");
-        //StartCoroutine(HideCor(allDiceResult));        
+        GetComponent<Animator>().SetTrigger("FadeOutDiceResult"); 
     }
 
     public void ClearDiceResult()
@@ -70,7 +69,6 @@ public class DiceResultScreen : MonoBehaviour
 
     public void UpdateDiceInfo(int diceNumber)
     {
-        Debug.Log(diceNumber);
         if (diceNumber == 1)
         {
             secondDice.gameObject.SetActive(false);
