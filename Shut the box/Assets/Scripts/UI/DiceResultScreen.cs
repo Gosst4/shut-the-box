@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class DiceResultScreen : MonoBehaviour
@@ -21,9 +22,12 @@ public class DiceResultScreen : MonoBehaviour
     [SerializeField] Button rightArrowBtn;
 
     List<int> _allDiceResult = new List<int>();
+	LocalizeStringEvent _diceNumberChangeEvent;
 
-    private void Start()
+	private void Start()
     {
+        _diceNumberChangeEvent = diceNumberText.GetComponent<LocalizeStringEvent>();
+		_diceNumberChangeEvent.StringReference.SetReference("Localization", "two_dice");
 		gameObject.SetActive(false);
 		ClearDiceResult();
     }
@@ -66,16 +70,17 @@ public class DiceResultScreen : MonoBehaviour
 
     public void UpdateDiceInfo(int diceNumber)
     {
+        Debug.Log(diceNumber);
         if (diceNumber == 1)
         {
             secondDice.gameObject.SetActive(false);
-            diceNumberText.text = "One Dice";
-        }
+			_diceNumberChangeEvent.StringReference.SetReference("Localization", "two_dice");
+		}
         else
         {
             secondDice.gameObject.SetActive(true);
-            diceNumberText.text = "Two Dice";
-        }
+			_diceNumberChangeEvent.StringReference.SetReference("Localization", "two_dice");
+		}
     }   
 
     public void OnScreenFaded()
