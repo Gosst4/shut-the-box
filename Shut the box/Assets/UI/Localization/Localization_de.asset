@@ -10,122 +10,120 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Localization_fr
+  m_Name: Localization_de
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: fr
+    m_Code: de
   m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
   m_Metadata:
-    m_Items:
-    - rid: 6369252110832500739
+    m_Items: []
   m_TableData:
   - m_Id: 284652774645760
-    m_Localized: Dos
+    m_Localized: "Zur\xFCck"
     m_Metadata:
       m_Items: []
   - m_Id: 284652774645761
-    m_Localized: Maison
+    m_Localized: Heim
     m_Metadata:
       m_Items: []
   - m_Id: 284652783034368
-    m_Localized: "Ferme la bo\xEEte"
+    m_Localized: "Schlie\xDFen Sie die Box"
     m_Metadata:
       m_Items: []
   - m_Id: 284652783034369
-    m_Localized: Championnat
+    m_Localized: Meisterschaft
     m_Metadata:
       m_Items: []
   - m_Id: 284652783034370
-    m_Localized: Jeu rapide
+    m_Localized: Schnelles Spielen
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422976
-    m_Localized: "Possibilit\xE9s"
+    m_Localized: Optionen
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422977
-    m_Localized: "R\xE8gles"
+    m_Localized: Regeln
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422978
-    m_Localized: Sortie
+    m_Localized: Ausfahrt
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422979
-    m_Localized: Commencer le jeu
+    m_Localized: Spiel starten
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422980
-    m_Localized: Nom
+    m_Localized: Name
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422981
-    m_Localized: "Complexit\xE9"
+    m_Localized: "Komplexit\xE4t"
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422982
-    m_Localized: Joueur {0}
+    m_Localized: Spieler {0}
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422983
-    m_Localized: Humain
+    m_Localized: Menschlich
     m_Metadata:
       m_Items: []
   - m_Id: 284652795617280
-    m_Localized: "Al\xE9atoire"
+    m_Localized: "Zuf\xE4llig"
     m_Metadata:
       m_Items: []
   - m_Id: 284652795617281
-    m_Localized: Facile
+    m_Localized: Einfach
     m_Metadata:
       m_Items: []
   - m_Id: 284652795617282
-    m_Localized: Normale
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811584
-    m_Localized: Ajouter un joueur
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811585
-    m_Localized: Ajouter l'IA
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811586
-    m_Localized: Rouler
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811587
-    m_Localized: "Deux d\xE9s"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811588
-    m_Localized: "Un d\xE9"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811589
-    m_Localized: "R\xE9sultat"
-    m_Metadata:
-      m_Items:
-      - rid: 6369252110832500739
-  - m_Id: 284652799811590
-    m_Localized: Le gagnant est {0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 284652799811591
-    m_Localized: Recommencer
+    m_Localized: Normal
     m_Metadata:
       m_Items: []
   - m_Id: 292667930206208
-    m_Localized: Dur
+    m_Localized: Hart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811584
+    m_Localized: "Spieler hinzuf\xFCgen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811585
+    m_Localized: "F\xFCgen Sie K.I. hinzu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811586
+    m_Localized: Rollen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811587
+    m_Localized: "Zwei W\xFCrfel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811588
+    m_Localized: "Ein W\xFCrfel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811589
+    m_Localized: Ergebnis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811590
+    m_Localized: Der Gewinner ist {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284652799811591
+    m_Localized: Beginnen Sie erneut
     m_Metadata:
       m_Items: []
   - m_Id: 1003981988192256
-    m_Localized: Cogniteur
+    m_Localized: Erkenner
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: OctetRanger
+    m_Localized: ByteRanger
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
@@ -133,7 +131,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438466
-    m_Localized: "\xC9choPulse"
+    m_Localized: EchoPulse
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438467
@@ -145,15 +143,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438469
-    m_Localized: "Ombre de donn\xE9es"
+    m_Localized: DataShade
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438470
-    m_Localized: Gardien Mech
+    m_Localized: MechWarden
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: LogiqueFlare
+    m_Localized: LogicFlare
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
@@ -162,10 +160,4 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 2
-    RefIds:
-    - rid: 6369252110832500739
-      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_Entries: 
-        m_SharedEntries:
-        - id: 284652799811589
+    RefIds: []

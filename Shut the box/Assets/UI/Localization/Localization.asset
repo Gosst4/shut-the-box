@@ -17,6 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85b5ae71f6e41a64a9b44e79b19d231f, type: 2}
   - {fileID: 11400000, guid: 9cb45576195bc474aa28d6e6b48eab6d, type: 2}
   - {fileID: 11400000, guid: bb3f17d4382ef2049a8c4cd01d5efe47, type: 2}
+  - {fileID: 11400000, guid: d3c03313e2bced241824679fad8326d7, type: 2}
+  - {fileID: 11400000, guid: a28680d2bc82c644eb3720a484c55528, type: 2}
+  - {fileID: 11400000, guid: ea76a1b2a9f19bc40840f2569b60bcc2, type: 2}
   m_Extensions:
   - rid: 6369252092739584001
   m_Group: String Table
@@ -35,6 +38,9 @@ MonoBehaviour:
         - rid: 6369252092739584004
         - rid: 6369252092739584005
         - rid: 6369252092739584006
+        - rid: 6369252155348746242
+        - rid: 6369252155348746243
+        - rid: 6369252155348746244
         m_RemoveMissingPulledKeys: 1
     - rid: 6369252092739584003
       type: {class: KeyColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
@@ -57,7 +63,28 @@ MonoBehaviour:
     - rid: 6369252092739584006
       type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
       data:
-        m_Column: E
+        m_Column: D
         m_LocaleIdentifier:
           m_Code: fr
+        m_IncludeComments: 0
+    - rid: 6369252155348746242
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: E
+        m_LocaleIdentifier:
+          m_Code: de
+        m_IncludeComments: 0
+    - rid: 6369252155348746243
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: F
+        m_LocaleIdentifier:
+          m_Code: es
+        m_IncludeComments: 0
+    - rid: 6369252155348746244
+      type: {class: LocaleColumn, ns: UnityEditor.Localization.Plugins.Google.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_Column: G
+        m_LocaleIdentifier:
+          m_Code: zh-Hans
         m_IncludeComments: 0

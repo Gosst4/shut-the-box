@@ -115,6 +115,46 @@ MonoBehaviour:
     m_Key: start_again_btn
     m_Metadata:
       m_Items: []
+  - m_Id: 1003981988192256
+    m_Key: ai_name_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438464
+    m_Key: ai_name_02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438465
+    m_Key: ai_name_03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438466
+    m_Key: ai_name_04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438467
+    m_Key: ai_name_05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438468
+    m_Key: ai_name_06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438469
+    m_Key: ai_name_07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438470
+    m_Key: ai_name_08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438471
+    m_Key: ai_name_09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1003982101438472
+    m_Key: ai_name_10
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
