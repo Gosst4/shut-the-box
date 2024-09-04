@@ -770,6 +770,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 453221333189629075}
     m_Modifications:
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253]
+      value: Unity.Localization UnityEngine.Localization.PropertyVariants.TrackedProperties.BoolTrackedProperty
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_PropertyPath
+      value: isDefaultAi
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_VariantData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_VariantData.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_VariantData.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746251].m_TrackedProperties.items.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746251].m_TrackedProperties.items.Array.data[1]
+      value: 6369252155348746253
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_VariantData.Array.data[0].localeIdentifier.m_Code
+      value: en
+      objectReference: {fileID: 0}
+    - target: {fileID: -6220847369519322512, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
+      propertyPath: managedReferences[6369252155348746253].m_VariantData.Array.data[1].localeIdentifier.m_Code
+      value: ru
+      objectReference: {fileID: 0}
     - target: {fileID: 3847627354946797406, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -865,10 +901,6 @@ PrefabInstance:
     - target: {fileID: 6959951937853190531, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
       propertyPath: isDefault
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6959951937853190531, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
-      propertyPath: isDefaultAi
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7359045074831974801, guid: b3bccb315337d0b499241e618f0aa22d, type: 3}
       propertyPath: m_Name

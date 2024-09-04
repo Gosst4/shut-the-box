@@ -119,43 +119,43 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003981988192256
-    m_Localized: Erkenner
+    m_Localized: NexBot
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: ByteRanger
+    m_Localized: Flussmittel
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
-    m_Localized: NeuroSmith
+    m_Localized: Zyron
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438466
-    m_Localized: EchoPulse
+    m_Localized: Quark
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438467
-    m_Localized: CodeVortex
+    m_Localized: ByteX
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438468
-    m_Localized: SynapseX
+    m_Localized: NovaAI
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438469
-    m_Localized: DataShade
+    m_Localized: Kortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438470
-    m_Localized: MechWarden
+    m_Localized: Wirbel
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: LogicFlare
+    m_Localized: "\xC4gide"
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
-    m_Localized: CircuitStrider
+    m_Localized: Echo
     m_Metadata:
       m_Items: []
   references:

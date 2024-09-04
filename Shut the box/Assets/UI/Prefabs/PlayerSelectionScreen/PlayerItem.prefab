@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3847627354946797406}
   - component: {fileID: 6959951937853190531}
+  - component: {fileID: -6220847369519322512}
   m_Layer: 5
   m_Name: PlayerItem
   m_TagString: Untagged
@@ -315,13 +316,53 @@ MonoBehaviour:
   playerItemContainer: {fileID: 40380940049434569}
   index: 1
   playerDiscription: {fileID: 8412604607216953161}
-  discription: Human
-  playerDiscriptionText: {fileID: 7611375309847806633}
   isDefault: 1
+  aiNames: {fileID: 0}
   toggleGroup: {fileID: 4478028910140766357}
   isDefaultAi: 0
   buttonContainer: {fileID: 3183142127032365795}
   removeButton: {fileID: 5709483854434776387}
+--- !u!114 &-6220847369519322512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7359045074831974801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 6369252155348746251
+  references:
+    version: 2
+    RefIds:
+    - rid: 6369252155348746251
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 6959951937853190531}
+        m_TrackedProperties:
+          items:
+          - rid: 6369252155348746252
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 6369252155348746252
+      type: {class: UnityObjectProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: aiNames
+        m_TypeString: AiNamesConfig, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: {fileID: 11400000, guid: 720fcb29ff0fe154ea4fae4632326332, type: 2}
+        - localeIdentifier:
+            m_Code: ru
+          value: {fileID: 11400000, guid: 720fcb29ff0fe154ea4fae4632326332, type: 2}
 --- !u!1 &8236924989611530970
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +374,7 @@ GameObject:
   - component: {fileID: 2060845110356515317}
   - component: {fileID: 3140876526992027529}
   - component: {fileID: 1947691966859955462}
+  - component: {fileID: 3017759010990347496}
   m_Layer: 5
   m_Name: PlayerNameText
   m_TagString: Untagged
@@ -456,6 +498,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3017759010990347496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236924989611530970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:d8aff8b3c2c5db54a81dbdd1081a5dd0
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1947691966859955462}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &8412604607216953161
 GameObject:
   m_ObjectHideFlags: 0

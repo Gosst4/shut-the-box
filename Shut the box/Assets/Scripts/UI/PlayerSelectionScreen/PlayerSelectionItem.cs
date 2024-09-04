@@ -1,5 +1,8 @@
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class PlayerSelectionItem : MonoBehaviour
@@ -13,8 +16,9 @@ public class PlayerSelectionItem : MonoBehaviour
     [SerializeField] bool isDefault;
 
     [Header("Computer Player")]
-    [SerializeField] ToggleGroup toggleGroup;
-	[SerializeField] bool isDefaultAi;
+    [SerializeField] AiNamesConfig aiNames;
+	[SerializeField] ToggleGroup toggleGroup;
+	[SerializeField] bool isDefaultAi = false;
 
 	[Header("Buttons")]
     [SerializeField] GameObject buttonContainer;
@@ -24,6 +28,8 @@ public class PlayerSelectionItem : MonoBehaviour
     PlayerType _playerType;
     bool isSelected = false;
 	PlayerSelectionScreen _playerSelectionScreen;
+	LocalizeStringEvent _playerNameEvent;
+	static List<string> _usedAiNames = new List<string>();
 
 	const int DefaultDiffIndex = 2;
 
@@ -32,6 +38,7 @@ public class PlayerSelectionItem : MonoBehaviour
         removeButton.gameObject.SetActive(!isDefault);
         playerItemContainer.SetActive(false);
         _playerSelectionScreen = FindObjectOfType<PlayerSelectionScreen>();
+		_playerNameEvent = _playerName.GetComponent<LocalizeStringEvent>();
 
 		if (isDefault) AddHumanPlayer();
         if (isDefaultAi) AddComputerPlayer();
@@ -56,8 +63,8 @@ public class PlayerSelectionItem : MonoBehaviour
         playerItemContainer.SetActive(true);
         playerDiscription.SetActive(false);
         toggleGroup.gameObject.SetActive(true);
-        _name = "A.I. " + index;
-        _playerName.text = _name;
+        _name = SetRandomName();
+		_playerNameEvent.StringReference.SetReference("Localization", _name);
         var selectedToggle = toggleGroup.transform.GetChild(DefaultDiffIndex).GetComponent<Toggle>();
         selectedToggle.isOn = true;
         selectedToggle.Select();
@@ -68,7 +75,20 @@ public class PlayerSelectionItem : MonoBehaviour
 		_playerSelectionScreen.CheckStartButton();
     }
 
-    public void OnRandomClick(bool difficulty)
+	private string SetRandomName()
+	{
+		int nameIndex;
+		do
+		{
+			nameIndex = UnityEngine.Random.Range(0, aiNames.AiNames.Length);
+		}
+		while (_usedAiNames.Contains(aiNames.AiNames[nameIndex]));
+
+		_usedAiNames.Add(aiNames.AiNames[nameIndex]);
+		return aiNames.AiNames[nameIndex];
+	}
+
+	public void OnRandomClick(bool difficulty)
     {
         if (difficulty)
             _playerType = (PlayerType)UnityEngine.Random.Range(1, 4);                  
@@ -95,6 +115,10 @@ public class PlayerSelectionItem : MonoBehaviour
         playerItemContainer.SetActive(false);
         isSelected = false;
 		_playerSelectionScreen.CheckStartButton();
+        if (_usedAiNames.Contains(_name))
+        {
+            _usedAiNames.Remove(_name);
+        }
 	}
 
     public PlayerData GetPlayerData()
