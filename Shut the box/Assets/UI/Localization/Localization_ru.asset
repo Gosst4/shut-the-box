@@ -66,7 +66,8 @@ MonoBehaviour:
   - m_Id: 284652791422982
     m_Localized: "\u0418\u0433\u0440\u043E\u043A"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252110832500740
   - m_Id: 284652791422983
     m_Localized: "\u0427\u0435\u043B\u043E\u0432\u0435\u043A"
     m_Metadata:
@@ -169,3 +170,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 284652799811589
+        - id: 284652791422982

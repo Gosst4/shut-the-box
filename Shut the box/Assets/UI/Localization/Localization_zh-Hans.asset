@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: zh-Hans
   m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 6369252272219881474
   m_TableData:
   - m_Id: 284652774645760
     m_Localized: "\u540E\u9000"
@@ -65,7 +66,8 @@ MonoBehaviour:
   - m_Id: 284652791422982
     m_Localized: "\u73A9\u5BB6{0}"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252272219881474
   - m_Id: 284652791422983
     m_Localized: "\u4EBA\u7C7B"
     m_Metadata:
@@ -119,45 +121,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003981988192256
-    m_Localized: "\u5948\u514B\u65AF\u673A\u5668\u4EBA"
+    m_Localized: NexBot
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: "\u901A\u91CF\u5668"
+    m_Localized: Fluxor
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
-    m_Localized: "\u8D5B\u9F99"
+    m_Localized: Zyron
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438466
-    m_Localized: "\u5938\u514B"
+    m_Localized: Quark
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438467
-    m_Localized: "\u5B57\u8282X"
+    m_Localized: ByteX
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438468
-    m_Localized: "\u8BFA\u74E6\u4EBA\u5DE5\u667A\u80FD"
+    m_Localized: NovaAI
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438469
-    m_Localized: "\u76AE\u8D28"
+    m_Localized: Cortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438470
-    m_Localized: "\u6DA1\u6D41"
+    m_Localized: Vortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: "\u5B99\u65AF\u76FE"
+    m_Localized: Aegis
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
-    m_Localized: "\u56DE\u58F0"
+    m_Localized: Echo
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6369252272219881474
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 284652791422982

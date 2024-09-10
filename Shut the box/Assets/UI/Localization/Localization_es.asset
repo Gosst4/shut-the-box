@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: es
   m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 6369252272219881476
   m_TableData:
   - m_Id: 284652774645760
     m_Localized: "Atr\xE1s"
@@ -65,7 +66,8 @@ MonoBehaviour:
   - m_Id: 284652791422982
     m_Localized: Jugador {0}
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252272219881476
   - m_Id: 284652791422983
     m_Localized: Humano
     m_Metadata:
@@ -119,11 +121,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003981988192256
-    m_Localized: Nexbot
+    m_Localized: NexBot
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: fluxor
+    m_Localized: Fluxor
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
@@ -131,7 +133,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438466
-    m_Localized: Cuarc
+    m_Localized: Quark
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438467
@@ -139,25 +141,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438468
-    m_Localized: Nova AI
+    m_Localized: NovaAI
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438469
-    m_Localized: Corteza
+    m_Localized: Cortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438470
-    m_Localized: "V\xF3rtice"
+    m_Localized: Vortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: "\xC9gida"
+    m_Localized: Aegis
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
-    m_Localized: Eco
+    m_Localized: Echo
     m_Metadata:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6369252272219881476
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 284652791422982

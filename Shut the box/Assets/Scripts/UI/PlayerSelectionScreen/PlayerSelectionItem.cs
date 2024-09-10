@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.Localization.SmartFormat;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.UI;
 
 public class PlayerSelectionItem : MonoBehaviour
@@ -24,7 +28,7 @@ public class PlayerSelectionItem : MonoBehaviour
     [SerializeField] GameObject buttonContainer;
     [SerializeField] Button removeButton;
 
-    string _name;
+    string _name = "player_label";
     PlayerType _playerType;
     bool isSelected = false;
 	PlayerSelectionScreen _playerSelectionScreen;
@@ -49,9 +53,14 @@ public class PlayerSelectionItem : MonoBehaviour
         playerItemContainer.SetActive(true);
         playerDiscription.SetActive(true);
         toggleGroup.gameObject.SetActive(false);
-        _name = "Player " + index;
-        _playerName.text = _name;
-        buttonContainer.SetActive(false);
+
+        //_name = "player_label";
+		//LocalizedString localizedString = new LocalizedString("Localization", _name);
+
+		//localizedString["0"] = new IntVariable { Value = index };
+		//localizedString.RefreshString();
+
+		buttonContainer.SetActive(false);
         _playerType = PlayerType.Human;
         isSelected = true;
 

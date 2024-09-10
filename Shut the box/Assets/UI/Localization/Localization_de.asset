@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: de
   m_SharedData: {fileID: 11400000, guid: d8aff8b3c2c5db54a81dbdd1081a5dd0, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 6369252272219881475
   m_TableData:
   - m_Id: 284652774645760
     m_Localized: "Zur\xFCck"
@@ -65,7 +66,8 @@ MonoBehaviour:
   - m_Id: 284652791422982
     m_Localized: Spieler {0}
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252272219881475
   - m_Id: 284652791422983
     m_Localized: Menschlich
     m_Metadata:
@@ -123,7 +125,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: Flussmittel
+    m_Localized: Fluxor
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
@@ -143,15 +145,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438469
-    m_Localized: Kortex
+    m_Localized: Cortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438470
-    m_Localized: Wirbel
+    m_Localized: Vortex
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: "\xC4gide"
+    m_Localized: Aegis
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
@@ -160,4 +162,10 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6369252272219881475
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 284652791422982

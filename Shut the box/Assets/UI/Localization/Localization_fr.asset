@@ -64,9 +64,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284652791422982
-    m_Localized: Joueur{0}
+    m_Localized: Joueur {0}
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 6369252110832500739
   - m_Id: 284652791422983
     m_Localized: Humain
     m_Metadata:
@@ -125,7 +126,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438464
-    m_Localized: Fluxeur
+    m_Localized: Fluxor
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438465
@@ -137,7 +138,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438467
-    m_Localized: OctetX
+    m_Localized: ByteX
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438468
@@ -153,11 +154,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438471
-    m_Localized: "\xC9gide"
+    m_Localized: Aegis
     m_Metadata:
       m_Items: []
   - m_Id: 1003982101438472
-    m_Localized: "\xC9cho"
+    m_Localized: Echo
     m_Metadata:
       m_Items: []
   references:
@@ -169,3 +170,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 284652799811589
+        - id: 284652791422982
