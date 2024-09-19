@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -33,9 +34,15 @@ public class Game : MonoBehaviour
         {
             setup.gameObject.SetActive(true);
             setup.RestoreSetup();
+
+            var player = setup.GetComponent<Player>();
+			if (player != null)
+			{
+				Destroy(player);
+			}
         }
 
-        FindObjectOfType<PlayerSelectionScreen>(true).gameObject.SetActive(true);
+		FindObjectOfType<PlayerSelectionScreen>(true).gameObject.SetActive(true);
 
         DiceManager.Instance.ResetDice();
     }
