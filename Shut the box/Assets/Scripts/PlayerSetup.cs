@@ -33,25 +33,25 @@ public class PlayerSetup : MonoBehaviour
                 }
                 else
                 {
-                    chip.SetPossibleMove(false);
+                    chip.SetPossibleMove(false, true);
                     chip.RemoveSelection();
                 }
             }
         }
     }
 
-    public void ShowPossibleMoves(int diceValue)
+    public void ShowPossibleMoves(int diceValue, bool isHuman)
     {
         for (int i = 0; i < chips.Length; i++)
         {
             if (!chips[i].IsActive) continue;
             if (chips[i].GetValue() == diceValue)
             {
-                chips[i].SetPossibleMove(true);
+                chips[i].SetPossibleMove(true, isHuman);
             }
             else if (chips[i].HasMatch(chips, diceValue))
             {
-                chips[i].SetPossibleMove(true);
+                chips[i].SetPossibleMove(true, isHuman);
             }
         }   
     }

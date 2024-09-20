@@ -8,6 +8,7 @@ public abstract class ComputerPlayer : Player
     {
         Setup = GetComponent<PlayerSetup>();
     }
+
     public override void UnblockMovement()
     {
         DiceManager.Instance.ResetDice();
@@ -48,7 +49,7 @@ public abstract class ComputerPlayer : Player
 
     IEnumerator FinishMove(int diceResult)
     {
-        Setup.ShowPossibleMoves(diceResult);
+        Setup.ShowPossibleMoves(diceResult, false);
 
         yield return new WaitForSeconds(1f);
 

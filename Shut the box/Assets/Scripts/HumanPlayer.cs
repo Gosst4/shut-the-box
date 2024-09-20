@@ -10,7 +10,7 @@ public class HumanPlayer : Player
     {
         if (Setup.CanMakeMove(diceResult))
         {
-            Setup.ShowPossibleMoves(diceResult);
+            Setup.ShowPossibleMoves(diceResult, true);
             return true;
         }
         else

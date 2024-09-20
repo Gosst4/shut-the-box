@@ -31,11 +31,14 @@ public class Chip : MonoBehaviour
         return (int)_number;
     }
 
-    public void SetPossibleMove(bool isClicable)
+    public void SetPossibleMove(bool isClicable, bool isHuman)
     {
         _possibleMove.SetActive(isClicable);
-        _boxCollider.enabled = isClicable;
-    }
+
+        if (isHuman)
+            _boxCollider.enabled = isClicable;
+
+	}
 
     public IEnumerator Fall()
     {
@@ -61,8 +64,8 @@ public class Chip : MonoBehaviour
     public void RestoreState()
     {
         gameObject.SetActive(true);
-        SetPossibleMove(false);
-        transform.position = transform.parent.position;
+        SetPossibleMove(false, true);
+		transform.position = transform.parent.position;
         IsActive = true;        
     }
 
